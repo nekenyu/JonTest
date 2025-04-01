@@ -1,0 +1,63 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "outDir": "\"${workspaceRoot}\\build\"",
+    "tasks": [
+        {
+            "label": "make world",
+            "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "command": "make",
+            "args": [
+                "run-test"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "make all",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "make clean",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "command": "make",
+            "args": [
+                "clean"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+
+#
+# Makefile.lib.incl
+#
+# Defines this library for building.
+#
+# Example usage:
+#	include (path-to-this-file)
+#	CXXFLAGS+= ${LIB_JON_TEST_FLAGS}
+#	LIBS+= ${LIB_JON_TEST_LIBS}
+
+LIB_JON_TEST_NAME= JonTest
+# Note: := assigns this when __this__ file is included, using the most recent include -- the lastword
+LIB_JON_TEST_TOPDIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+LIB_JON_TEST_FILE= $(LIB_JON_TEST_TOPDIR)/lib/lib${LIB_JON_TEST_NAME}.a
+
+LIB_JON_TEST_FLAGS= -I ${LIB_JON_TEST_TOPDIR}/include
+LIB_JON_TEST_LIBS= ${LIB_JON_TEST_FILE}
+
