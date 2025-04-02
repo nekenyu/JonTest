@@ -2,7 +2,7 @@
 \example main.cpp
 Simple example of how to run tests.
 
-\example{lineno} SimpleTest.cpp
+\example SimpleTest.cpp
 std::cout demonstration of all tests in a suite being called, with setup() and teardown().
 
 \example SimpleTest2.cpp
