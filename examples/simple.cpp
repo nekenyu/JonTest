@@ -1,9 +1,9 @@
-#include "ModulesTest.h"
-
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
-   std::cout << "ModulesTest::getAnswer()=" << ModulesTest::getAnswer() <<std::endl; // 42
+   std::cout << "TODO: Implement this" << std::endl;
+
+   return 0;
 }

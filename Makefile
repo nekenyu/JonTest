@@ -9,9 +9,9 @@ all:
 #
 
 SUBDIRS+= src
-SUBDIRS+= big_example
+#SUBDIRS+= big_example
 SUBDIRS+= examples
-#SUBDIRS+= test
+SUBDIRS+= test
 big_example: src
 examples: src
 test: src
@@ -48,9 +48,9 @@ $(SUBDIRS):
 
 .PHONY: run-test
 run-test: all
-#	build/test/unit-test.exe
-	build/big_example/big_example.exe
-	build/examples/simple.exe
+	build/test/unit-test.exe
+#	build/big_example/big_example.exe
+#	build/examples/simple.exe
 
 .PHONY: world
 world: all run-test # docs
