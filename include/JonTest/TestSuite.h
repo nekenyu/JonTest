@@ -76,7 +76,7 @@ private:
                 try { (suite.* testCase)(); casePassed = true; }
                 catch(TestFailure& failure) { fail(out, "case", suite.getName(), name, failure.what()); }
                 catch(...)                  { fail(out, "case", suite.getName(), name, "UNEXPECTED EXCEPTION"); }
-                }
+            }
             
             bool teardownPassed = false;
             try { suite.teardown(); teardownPassed = true; }

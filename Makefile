@@ -9,10 +9,8 @@ all:
 #
 
 SUBDIRS+= src
-#SUBDIRS+= big_example
 SUBDIRS+= examples
 SUBDIRS+= test
-big_example: src
 examples: src
 test: src
 
@@ -38,19 +36,18 @@ $(SUBDIRS):
 # Other tasks
 #
 
-#.PHONY: docs
-#docs: all
-#	doxygen Doxyfile
+.PHONY: docs
+all: docs
+docs:
+	doxygen Doxyfile
 
-#.PHONY: cleanest
-#cleanest:
-#	-rm -rf doc_built
+.PHONY: cleanest
+cleanest:
+	-rm -rf doc_built
 
 .PHONY: run-test
 run-test: all
 	build/test/unit-test.exe
-#	build/big_example/big_example.exe
-#	build/examples/simple.exe
 
 .PHONY: world
-world: all run-test # docs
+world: all run-test docs

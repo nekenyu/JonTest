@@ -37,6 +37,4 @@
     if(passed) { throw JonTest::TestFailure(__FILE__, __LINE__, (msg), nullptr, nullptr, nullptr, nullptr, nullptr); } \
 }
 
-
-
 #endif
