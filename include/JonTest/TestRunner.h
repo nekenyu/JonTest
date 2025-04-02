@@ -1,5 +1,5 @@
-#ifndef TEST_RUNNER_H
-#define TEST_RUNNER_H
+#ifndef JON_TEST_TEST_RUNNER_H
+#define JON_TEST_TEST_RUNNER_H
 
 #include "JonTest/Count.h"
 

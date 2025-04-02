@@ -1,7 +1,6 @@
-#ifndef COUNT_H
-#define COUNT_H
+#ifndef JON_TEST_COUNT_H
+#define JON_TEST_COUNT_H
 
-#include <exception>
 #include <ostream>
 
 namespace JonTest
@@ -22,12 +21,6 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& stream, const Count& right);
-
-// TODO: Move This
-class TestFailure : public std::exception
-{
-    // TODO
-};
 
 }
 #endif

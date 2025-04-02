@@ -1,7 +1,8 @@
-#ifndef TEST_SUITE_H
-#define TEST_SUITE_H
+#ifndef JON_TEST_TEST_SUITE_H
+#define JON_TEST_TEST_SUITE_H
 
 #include "JonTest/Count.h"
+#include "JonTest/TestFailure.h"
 #include "JonTest/TestRunner.h"
 
 #include <iostream>
@@ -36,6 +37,17 @@ private:
 
     class TestCase
     {
+    private:
+        void log(std::ostream& out, const std::string& part, const std::string& suiteName, const std::string& caseName)
+        {
+            out << "\t" << suiteName << " - " << caseName << ": " << part <<"\n";
+        }        
+
+        void fail(std::ostream& out, const std::string& part, const std::string& suiteName, const std::string& caseName, const char* const what)
+        {
+            out << "\t" << suiteName << " - " << caseName << ": " << part << " FAILED: " << what << "\n";
+        }
+
     public:
         std::string name;
         TestSuite::Case testCase;
@@ -46,39 +58,33 @@ private:
 
         bool run(TestSuite& suite, std::ostream& out, bool verbose)
         {
-            if(verbose)
-            {
-                out << "Beginning Case: " << name << std::endl;
-            }
+            if(verbose) { log(out, "start", suite.getName(), name); }
         
             if(nullptr == testCase)
             {
-                out << "Case FAILED: " << name << " MISSING (Internal Error)" << std::endl;
+                fail(out, "start", suite.getName(), name, "MISSING (Internal Error)");
                 return false;
             }
         
-            bool passed = false;
-            try
-            {
-                suite.setup();
-                (suite.* testCase)();
-                suite.teardown();
-        
-                passed = true;
-                if(verbose)
-                {
-                    out << "Case Complete: " << name << std::endl;
+            bool setupPassed = false;
+            try { suite.setup(); setupPassed = true; }
+            catch(TestFailure& failure) { fail(out, "setup", suite.getName(), name, failure.what()); }
+            catch(...)                  { fail(out, "setup", suite.getName(), name, "UNEXPECTED EXCEPTION"); }
+
+            bool casePassed = false;
+            if(setupPassed) {
+                try { (suite.* testCase)(); casePassed = true; }
+                catch(TestFailure& failure) { fail(out, "case", suite.getName(), name, failure.what()); }
+                catch(...)                  { fail(out, "case", suite.getName(), name, "UNEXPECTED EXCEPTION"); }
                 }
-            }
-            catch(TestFailure& failure)
-            {
-                out << "Case FAILED: " << name << std::endl;
-            }
-            catch(...)
-            {
-                out << "Case FAILED: " << name << " UNEXPECTED" << std::endl;
-            }
-        
+            
+            bool teardownPassed = false;
+            try { suite.teardown(); teardownPassed = true; }
+            catch(TestFailure& failure) { fail(out, "teardown", suite.getName(), name, failure.what()); }
+            catch(...)                  { fail(out, "teardown", suite.getName(), name, "UNEXPECTED EXCEPTION"); }
+    
+            const bool passed = setupPassed && casePassed && teardownPassed;
+            if(verbose && passed) { log(out, "done", suite.getName(), name); }        
             return passed;
         }
     };
@@ -112,6 +118,8 @@ protected:
     }
 
 public:
+    const std::string& getName() const { return name; }
+
     virtual Count run(std::ostream& out,bool verbose)
     {
         if(verbose)
