@@ -23,14 +23,20 @@
 #define assertGreater(first, second, msg)      assert__2(first, second, msg, >)
 #define assertGreaterEqual(first, second, msg) assert__2(first, second, msg, >=)
 
-// TODO: assert exceptions
+#define assertException(expr, expect, msg) { \
+    bool passed = false;\
+    try { (expr); passed = true; } \
+    catch( expect& object ) { } \
+    if(passed) { throw JonTest::TestFailure(__FILE__, __LINE__, (msg), nullptr, nullptr, nullptr, nullptr, nullptr); } \
+}
 
 #define expectedFailure(expr, msg) { \
     bool passed = false;\
     try { (expr); passed = true; } \
     catch (JonTest::TestFailure& failure) { }  \
-    catch (...) { throw; } \
     if(passed) { throw JonTest::TestFailure(__FILE__, __LINE__, (msg), nullptr, nullptr, nullptr, nullptr, nullptr); } \
 }
+
+
 
 #endif

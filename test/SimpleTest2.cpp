@@ -32,6 +32,8 @@ TEST_SUITE(SimpleTest2)
         assertGreaterEqual(0, 0, "greater equal w/ 0 0");
         assertGreaterEqual(1, 0, "greater equal w/ 1 0");
 
+        assertException(throw 42, int, "Validate assertException");
+
         // Will fail
         assert(false, "assert w/ false");
         //assertTrue(false, "assertTrue w/ false");
@@ -45,6 +47,9 @@ TEST_SUITE(SimpleTest2)
         // Demonstrate we can expect a failure of an assert
         expectedFailure(assertLessEqual(2+1, 0, "less equal w/ 2+1 0"), "Validates expected failure");
         expectedFailure(assertLessEqual(1+1, 0, "less equal w/ 1+1 0"), "Validates expected failure");
+
+        // Demonstrate we can expect a failure to throw an expected exception
+        expectedFailure(assertException((void) 2, int, "no exception thrown"), "Validate exception not thrown fails");
 
         // Demonstrate we can expect a failure of an expected failure
         // Mind blowing, really... But, we have to test it....
