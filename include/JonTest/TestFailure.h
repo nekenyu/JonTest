@@ -30,11 +30,10 @@ public:
         const char* const operString)
     :file(file), line(line), message(message) {
         std::ostringstream out;
-        out << "At " << file << ": " << line << ": " << message << "\n";        
+        out << message << "\n\t\tAt " << file << ":" << line << "\n";        
         if(operString) {
-            out << "\t\tTest:   first " << operString <<  " second\n"; 
-            out << "\t\tFirst:  " << firstEval  << " = " << firstString <<  "\n"; 
-            out << "\t\tSecond: " << secondEval << " = " << secondString << "\n";
+            out << "\t\tExpr: " << firstString << " " << operString << " " << secondString << "\n"; 
+            out << "\t\tEval: " << firstEval   << " " << operString << " " << secondEval << "\n";
         }
         whatString = out.str();
     }

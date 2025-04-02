@@ -124,7 +124,7 @@ public:
     {
         if(verbose)
         {
-            out << "Beginning Suite: " << name << std::endl;
+            out << "Beginning Suite: " << name << "\n";
         }
     
         Count counts;
@@ -140,8 +140,8 @@ public:
     
         if(verbose)
         {
-            out << "Suite Complete: " << name << std::endl
-                << "\tRun: " << counts.count << "\t Fails: " << counts.fails << std::endl;
+            out << "Suite Complete: " << name << "\n"
+                << "\tRun: " << counts.count << "\t Fails: " << counts.fails << "\n\n";
         }
         
         return counts;

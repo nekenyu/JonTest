@@ -2,8 +2,6 @@
 
 #include "JonTest/Assert.h"
 
-#include <iostream>
-
 TEST_SUITE(SimpleTest2)
 
     void setup()
