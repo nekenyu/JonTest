@@ -42,8 +42,16 @@ TEST_SUITE(SimpleTest2)
     
     TEST_CASE(b)
     {
-        // Will fail
-        assertLessEqual(1+1, 0, "less equal w/ 1+1 0");
+        // Demonstrate we can expect a failure of an assert
+        expectedFailure(assertLessEqual(2+1, 0, "less equal w/ 2+1 0"), "Validates expected failure");
+        expectedFailure(assertLessEqual(1+1, 0, "less equal w/ 1+1 0"), "Validates expected failure");
+
+        // Demonstrate we can expect a failure of an expected failure
+        // Mind blowing, really... But, we have to test it....
+        expectedFailure(expectedFailure(assert(true, "assert true to pass"), "Validate expected failure fails..."), "Validate expected failure");
+
+        // Demonstrate we can expect a failure of an assert
+        expectedFailure(assert(true, "assert true to pass"), "Validate expected failure fails...");
     }
 
     TEST_CASE(c)
