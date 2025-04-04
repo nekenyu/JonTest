@@ -42,6 +42,27 @@ public:
     /// Formatted representation of  failure
     std::string whatString;
 
+    /** Construct Test Failure Exception without excpression or operator information.
+     */
+    inline TestFailure(
+        const char* const file, ///< Filename where failure occurred
+        const int line, ///< Line number of file where failure occurred
+        const std::string& message ///< Message provided where failure occurred
+    )
+    :file(file),
+    line(line),
+    message(message),
+    firstExpression(),
+    secondExpression(),
+    operatorString()
+    {
+        {
+            std::ostringstream out;
+            out << message << "\n\t\tAt " << file << ":" << line;
+            whatString = out.str();
+        }
+    }
+
     /** Construct Test Failure Exception.
      * 
      * \note Relies on operator<< for Type1 and Type2.
@@ -54,11 +75,11 @@ public:
         const char* const file, ///< Filename where failure occurred
         const int line, ///< Line number of file where failure occurred
         const std::string& message, ///< Message provided where failure occurred
-        const char* const firstExpression, ///< String representation of first expression that failed the test
+        const std::string& firstExpression, ///< String representation of first expression that failed the test
         const Type1& firstValue, ///< Evaluation of the first expression that failed the test
-        const char* const secondExpression, ///< String representation of evaluation of second expression that failed the test
+        const std::string& secondExpression, ///< String representation of evaluation of second expression that failed the test
         const Type2& secondValue, ///< Evaluation of the second expression that failed the test
-        const char* const operatorString ///< /// String representation of operator that failed the test
+        const std::string& operatorString ///< /// String representation of operator that failed the test
         )
     :file(file),
     line(line),
@@ -84,7 +105,7 @@ public:
             out << message << "\n\t\tAt " << file << ":" << line;
             if(!this->operatorString.empty()) {
                 out << "\n\t\tExpression: " << firstExpression << " " << operatorString << " " << secondExpression << "\n";
-                out << "\t\tValue: " << firstValue   << " " << operatorString << " " << secondValue;
+                out << "\t\tValue: " << firstValue << " " << operatorString << " " << secondValue;
             }
             whatString = out.str();
         }
