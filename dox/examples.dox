@@ -20,4 +20,7 @@ Example showing a number of asserts and test case.
 \example assertFail_test.cpp
 Actual test of assertFail().
 
+\example assertBool_test.cpp
+Actual test of assert(), assertTrue(), assertFalse().
+
 */
