@@ -10,20 +10,41 @@
 namespace JonTest
 {
 
-class TestSuiteBase;
+class Logger;
+class TestSuiteInterface;
 
+/** Singleton that collects all TEST_SUITE()s, to run on demand.
+ */
 class TestRunner
 {
 private:
-    std::map<std::string, JonTest::TestSuiteBase*> suites;
-    inline TestRunner() {}
+    /// Mapping of test suite name to test suite.
+    std::map<std::string, JonTest::TestSuiteInterface*> suites;
+
+    // Private default constructor for singleton
+    TestRunner() = default;
 
 public:
+    /** Get the singleton.
+    *
+    * \returns the singleton.
+    */
     static TestRunner& get();
 
-    void add(const char* const name, TestSuiteBase* const suite);
+    /** Add the suite by name.
+     */
+    void add(
+        const char* const name, ///< Name of suite
+        TestSuiteInterface* const suite ///< Test Suite
+    );
 
-    bool run(std::ostream& out, bool verbose = false);
+    /** Run all tests that have been add()ed.
+     * 
+     * \return Count of tests run and tests failed fails.
+     */
+    Count run(
+        Logger& logger ///< To report status to
+    );
 };
 
 }

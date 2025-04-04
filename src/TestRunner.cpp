@@ -1,10 +1,9 @@
 #include "JonTest/TestRunner.h"
 
+#include "JonTest/Logger.h"
 #include "JonTest/TestSuite.h"
 
-#include <iostream>
 #include <map>
-#include <string>
 
 namespace JonTest
 {
@@ -14,29 +13,29 @@ TestRunner& TestRunner::get()
     return instance;
 }
 
-void TestRunner::add(const char* const name, TestSuiteBase* const suite)
+void TestRunner::add(
+    const char* const name,
+    TestSuiteInterface* const suite
+)
 {
     // TODO: Error check this isn't overriding an existing test
     suites[name] = suite;
 }
 
-bool TestRunner::run(std::ostream& out, bool verbose)
+Count TestRunner::run(
+    Logger& logger
+)
 {
-    if(verbose)
-    {
-        out << "Beginning All Test Suites" << std::endl;
-    }
+    logger.start();
 
     Count counts;
     for(const auto& nameSuite : suites)
     {
-        counts += nameSuite.second->run(out, verbose);
+        counts += nameSuite.second->run(logger);
     }
 
-    out << "Tests Complete:\n" 
-        << "\tRun: " << counts.count << "\t Fails: " << counts.fails << std::endl;
-
-    return 0 != counts.fails;
+    logger.end();
+    return counts;
 }
 
 }

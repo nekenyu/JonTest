@@ -1,4 +1,13 @@
+/*
+DOCUMENTATION FOR USING THIS .dox PAGE.
+
+List all examples here, so they may be referenced by \ref
+
+This is not a real "page", but they will be picked up in the automatic list on the Examples page.
+
+*/
 /**
+
 \example main.cpp
 Simple example of how to run tests.
 
