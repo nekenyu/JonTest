@@ -17,7 +17,7 @@ TEST_CASE(assertTrue_test)
     expectedFailure(assertTrue(false, "False should fail"), "verifies false failed");
 }
 
-TEST_CASE(assertFals_test)
+TEST_CASE(assertFalse_test)
 {
     assertFalse(false, "false should never fail");
     expectedFailure(assertFalse(true, "true should fail"), "verifies true failed");

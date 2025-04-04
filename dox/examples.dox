@@ -23,4 +23,7 @@ Actual test of assertFail().
 \example assertBool_test.cpp
 Actual test of assert(), assertTrue(), assertFalse().
 
+\example assertPtr_test.cpp
+Actual test of assertNullPtr(), assertValidPtr().
+
 */
