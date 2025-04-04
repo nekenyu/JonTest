@@ -35,4 +35,10 @@ Actual test of assert*() methods for < > <= >= == !=.
 \example assertException_test.cpp
 Actual test of assertException().
 
+\example assertFail_setup.cpp
+Actual test of failing tests in the setup().
+
+\example assertFail_teardown.cpp
+Actual test of failing tests in the teardown().
+
 */
