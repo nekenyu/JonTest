@@ -3,6 +3,7 @@
 
 #include "JonTest/Count.h"
 
+#include <exception>
 #include <ostream>
 #include <string>
 
@@ -46,6 +47,14 @@ public:
         const std::string& caseName, ///< Name of test case
         const std::string& casePart, ///< Part of the test case: setup, case, or teardown
         const TestFailure& failure ///< TestFailure as recorded
+    ) = 0;
+
+    /// Unexpected exception occurred during a part of the case
+    virtual void exceptionCase(
+        const std::string& suiteName, ///< Name of test suite
+        const std::string& caseName, ///< Name of test case
+        const std::string& casePart, ///< Part of the test case: setup, case, or teardown
+        const std::exception& unexpected ///< Unexpected exception
     ) = 0;
 
     /// End of test case, with record pass or fail 
@@ -120,6 +129,14 @@ public:
         const TestFailure& failure
     );
 
+    /// Unexpected exception occurred during a part of the case
+    virtual void exceptionCase(
+        const std::string& suiteName,
+        const std::string& caseName,
+        const std::string& casePart,
+        const std::exception& unexpected
+    );
+    
     virtual void endCase(
         const std::string& suiteName,
         const std::string& caseName,

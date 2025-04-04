@@ -24,7 +24,7 @@
 }
 
 /// Explicitly fail the current test case with the given message as explanation.
-#define assertFail(message) throw JonTest::TestFailure(__FILE__, __LINE__, (message), nullptr, nullptr, nullptr, nullptr, nullptr)
+#define assertFail(message) throw JonTest::TestFailure(__FILE__, __LINE__, (message), "", "", "", "", "")
 
 /// Fail this test if (first) is not true with the given message as explanation.
 #define assert(first, message)         jontest__assert2arg(first, true, message, ==)

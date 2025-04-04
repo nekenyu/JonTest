@@ -81,13 +81,24 @@ void StreamLogger::failCase(
         << " FAILED: " << failure.what() << "\n";
 }
 
+void StreamLogger::exceptionCase(
+    const std::string& suiteName, ///< Name of test suite
+    const std::string& caseName, ///< Name of test case
+    const std::string& casePart, ///< Part of the test case: setup, case, or teardown
+    const std::exception& unexpected ///< Unexpected exception
+)
+{
+    out << "\t" << suiteName << " - " << caseName << ": " << casePart
+        << " UNEXPECTED EXCEPTION: " << unexpected.what() << "\n";
+}
+
 void StreamLogger::endCase(
     const std::string& suiteName,
     const std::string& caseName,
     const bool pass
 )
 {
-    if(verbose || !pass)
+    if(verbose)
     {
         out << "\t" << suiteName << " - " << caseName << ": done " 
         << (pass ? "passed" : "FAILED") <<"\n";

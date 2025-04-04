@@ -81,10 +81,10 @@ public:
 
         {
             std::ostringstream out;
-            out << message << "\n\t\tAt " << file << ":" << line << "\n";
-            if(nullptr != operatorString) {
-                out << "\t\tExpression: " << firstExpression << " " << operatorString << " " << secondExpression << "\n";
-                out << "\t\tValue: " << firstValue   << " " << operatorString << " " << secondValue << "\n";
+            out << message << "\n\t\tAt " << file << ":" << line;
+            if(!this->operatorString.empty()) {
+                out << "\n\t\tExpression: " << firstExpression << " " << operatorString << " " << secondExpression << "\n";
+                out << "\t\tValue: " << firstValue   << " " << operatorString << " " << secondValue;
             }
             whatString = out.str();
         }

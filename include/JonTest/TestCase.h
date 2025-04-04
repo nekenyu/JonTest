@@ -88,20 +88,23 @@ public:
         
         bool setupPassed = false;
         try { suite.setup(); setupPassed = true; }
-        catch(TestFailure& failure) { logger.failCase(suite.getName(), name, "setup", failure); }
-        catch(...)                  { logger.errorCase(suite.getName(), name, "setup", "UNEXPECTED EXCEPTION"); }
+        catch(TestFailure& failure)       { logger.failCase(suite.getName(), name, "setup", failure); }
+        catch(std::exception& unexpected) { logger.exceptionCase(suite.getName(), name, "setup", unexpected); }
+        catch(...)                        { logger.errorCase(suite.getName(), name, "setup", "UNKNOWN EXCEPTION"); }
 
         bool casePassed = false;
         if(setupPassed) {
             try { (suite.* testCaseMethod)(); casePassed = true; }
-            catch(TestFailure& failure) { logger.failCase(suite.getName(), name, "case", failure); }
-            catch(...)                  { logger.errorCase(suite.getName(), name, "case", "UNEXPECTED EXCEPTION"); }
+            catch(TestFailure& failure)       { logger.failCase(suite.getName(), name, "case", failure); }
+            catch(std::exception& unexpected) { logger.exceptionCase(suite.getName(), name, "case", unexpected); }
+            catch(...)                        { logger.errorCase(suite.getName(), name, "case", "UNKNOWN EXCEPTION"); }
         }
         
         bool teardownPassed = false;
         try { suite.teardown(); teardownPassed = true; }
-        catch(TestFailure& failure) { logger.failCase(suite.getName(), name, "teardown", failure); }
-        catch(...)                  { logger.errorCase(suite.getName(), name, "teardown", "UNEXPECTED EXCEPTION"); }
+        catch(TestFailure& failure)       { logger.failCase(suite.getName(), name, "teardown", failure); }
+        catch(std::exception& unexpected) { logger.exceptionCase(suite.getName(), name, "teardown", unexpected); }
+        catch(...)                        { logger.errorCase(suite.getName(), name, "teardown", "UNKNOWN EXCEPTION"); }
 
         const bool passed = setupPassed && casePassed && teardownPassed;            
         logger.endCase(suite.getName(), name, passed);
