@@ -61,6 +61,10 @@
 
 /** Fail this test if (expression) does not throw the expected exception or a derived class exception with the given message as explanation.
 * Note: We cannot explicitly wrap expected in parenthesis for safety as it is an operator.
+*
+* \warning assertException() cannot be captured with expectedFailure() for a wrong-exception type
+* due to safely catching all exceptions `catch(...)` to report as "UNKNOWN EXCEPTION" -- including
+* `throw int(0)`.
 */
 #define assertException(expression, expected, message) { \
     bool passed = false;\

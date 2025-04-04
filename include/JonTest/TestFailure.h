@@ -12,7 +12,8 @@ namespace JonTest
  *
  * Contains all test data from failure.
 */
-class TestFailure : public std::exception
+class TestFailure
+: public std::exception
 {
 public:
     /// Filename where failure occurred

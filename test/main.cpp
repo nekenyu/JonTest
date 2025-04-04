@@ -92,5 +92,16 @@ main(
 
     JonTest::StreamLogger logger(std::cout, verbose);
     const JonTest::Count counts = JonTest::TestRunner::get().run(logger);
-    return counts.fails;
+
+    // UNIQUE TO TESTING JonTest: Some tests can only be verified by failing tests.
+    // We count and name them here, as a double check. Also, before they actuall fail,
+    // we output "EXPECT: " and the expected failure message for double-checking.
+    const int expectedFails = 3;
+    std::cout << "EXPECT:\t\t Fails: " << expectedFails << "\n"
+        << "\t\tAssertException - jontest_fail_exception\n"
+        << "\t\tAssertException - wrong_assertException\n"
+        << "\t\tAssertFail - jontest_fail_assertFail\n"
+        << "\t\tNote: Removed from return code (subtracted from fail count)\n";
+
+    return counts.fails - expectedFails;
 }
