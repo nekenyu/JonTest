@@ -19,23 +19,39 @@ public:
         // Nothing to do
     }
 
+    bool operator==(const InverseWrapper& right) const
+    {
+        // Unaffected by Inverse
+        return value == right.value;
+    }
+
+    bool operator!=(const InverseWrapper& right) const
+    {
+        // Unaffected by Inverse
+        return value != right.value;
+    }
+
     bool operator <(const InverseWrapper& right) const
     {
+        // Inverse negates
         return !(value < right.value);
     }
 
     bool operator >(const InverseWrapper& right) const
     {
+        // Inverse negates
         return !(value > right.value);
     }
 
     bool operator <=(const InverseWrapper& right) const
     {
+        // Inverse negates
         return (value == right.value) || ((*this) < right);
     }
 
     bool operator >=(const InverseWrapper& right) const
     {
+        // Inverse negates
         return (value == right.value) || ((*this) > right);
     }
 };
@@ -102,6 +118,34 @@ TEST_CASE(assertLessEqualGreaterEqual_Object)
 {
     // NOTE: InverseWrapper negates the comparison tests
     testLessEqualGreaterEqual(InverseWrapper(1), InverseWrapper(0));
+}
+
+TEST_CASE(assertEqual_Numeric)
+{
+    assertEqual(0, 0, "Same");
+    EXPECTED_FAILURE(assertEqual(0, 1, "Not same"), "Verify FAIL: not same values");
+
+    assertEqual('a', 'a', "Same");
+    EXPECTED_FAILURE(assertEqual('a', 'b', "Not same"), "Verify FAIL: not same values");
+
+    // Note: Of course, we do not test equality on floating point numbers...
+
+    assertEqual(InverseWrapper(0), InverseWrapper(0), "Same .values");
+    EXPECTED_FAILURE(assertEqual(InverseWrapper(0), InverseWrapper(1), "Not same"), "Verify FAIL: not same .values");
+}
+
+TEST_CASE(assertNotEqual_Numeric)
+{
+    assertNotEqual(0, 1, "Not same");
+    EXPECTED_FAILURE(assertNotEqual(0, 0, "Same"), "Verify FAIL: same values");
+
+    assertNotEqual('a', 'b', "Not same");
+    EXPECTED_FAILURE(assertNotEqual('a', 'a', "Same"), "Verify FAIL: same values");
+
+    // Note: Of course, we do not test inequality on floating point numbers...
+
+    assertNotEqual(InverseWrapper(0), InverseWrapper(1), "Not not same .values");
+    EXPECTED_FAILURE(assertNotEqual(InverseWrapper(0), InverseWrapper(0), "Same"), "Verify FAIL: same .values");
 }
 
 TEST_SUITE_END();

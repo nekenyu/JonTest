@@ -8,14 +8,17 @@ This is not a real "page", but they will be picked up in the automatic list on t
 */
 /**
 
+\example SimpleTest.cpp
+Example Test Case with simple int main().
+
 \example main.cpp
-Simple example of how to run tests.
+Example of how to run tests, without any test cases.
+\note This also has command line argument checking.
+\note This also adjust the fail count for the tests that JonTest needs to have fail in
+order to test itself.
 
 \example TestCaseOrder.cpp
 std::cout demonstration of all tests in a suite being called, with setup() and teardown().
-
-\example SimpleTest.cpp
-Example showing a number of asserts and test case.
 
 \example assertFail_test.cpp
 Actual test of assertFail().
@@ -25,5 +28,11 @@ Actual test of assert(), assertTrue(), assertFalse().
 
 \example assertPtr_test.cpp
 Actual test of assertNullPtr(), assertValidPtr().
+
+\example assertComparison_test.cpp
+Actual test of assert*() methods for < > <= >= == !=.
+
+\example assertException_test.cpp
+Actual test of assertException().
 
 */
