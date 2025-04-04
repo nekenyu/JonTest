@@ -17,7 +17,9 @@ class Logger;
  */
 class TestSuiteInterface
 {
-protected:
+public:
+    virtual ~TestSuiteInterface();
+
     /** The Test Suite runsthis prior to each test case. A default do-nothing implementation is provided.
      */
     virtual void setup();
@@ -25,9 +27,6 @@ protected:
     /** The Test Suite runs this after to each test case. A default do-nothing implementation is provided.
      */
     virtual void teardown();
-
-public:
-    virtual ~TestSuiteInterface();
 
     /** Runs all Test Cases in this Test Suite.
      * 

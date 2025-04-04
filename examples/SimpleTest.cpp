@@ -1,8 +1,22 @@
 #include "JonTest/TestSuite.h"
-
 #include "JonTest/Assert.h"
 
-TEST_SUITE(SimpleTest2)
+#include <iostream>
+
+/** Example execution of JonTest showing a number of asserts and test cases.
+ */
+int /// \returns unix return code where 0 is success, positive values are the number of failed tests
+main(
+    int argc, ///< Number of arguments to program
+    char**argv///< array of argc argument char* values to program
+)
+{
+    JonTest::StreamLogger logger(std::cout, true);
+    const JonTest::Count counts = JonTest::TestRunner::get().run(logger);
+    return counts.fails;
+}
+
+TEST_SUITE(SimpleTest)
 
     void setup()
     {

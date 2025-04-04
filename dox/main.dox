@@ -47,9 +47,7 @@ Testing is organized a tree containing:
     - Assertions of validatity, such as assert()
 
 Source Code Examples:
-- \ref main.cpp         -- Running the tests
-- \ref SimpleTest.cpp   -- Demo that all cases are run in a test
-- \ref SimpleTest2.cpp  -- Testing the tests
+\see <a href="examples.html">Examples</a>
 
 
 \section main_license
