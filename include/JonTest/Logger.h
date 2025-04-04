@@ -84,20 +84,17 @@ public:
  */
 class StreamLogger : public Logger
 {
-private:
+protected:
     /// Stream to write to
     std::ostream& out;
 
     /// Simple level of verbosity: true for all events, false for critical
-    bool verbose;
-
-    /// The count of test cases completed, and failed.
-    Count count;
+    const bool verbose;
 
 public:
     /** Construct the Stream Logger to write to out with the given verbosity.
      */
-    explicit StreamLogger(
+    StreamLogger(
         std::ostream& out,  ///< Stream to write to
         bool verbose ///< Simple level of verbosity: true for all events, false for critical
     );
@@ -149,11 +146,6 @@ public:
     );
 
     virtual void end();
-
-    /** Get the count of test cases completed, and failed.
-     * \returns the count of test cases completed, and failed.
-     */
-    Count getCount() const;
 };
 
 }

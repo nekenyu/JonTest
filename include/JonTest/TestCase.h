@@ -80,7 +80,7 @@ public:
 
         if(nullptr == testCaseMethod)
         {
-            logger.errorCase(suite.getName(), name, "(internal)", "MISSING test case method");
+            logger.errorCase(suite.getName(), name, "(internal)", "Internal Error: MISSING test case method");
             return false;
         }
     

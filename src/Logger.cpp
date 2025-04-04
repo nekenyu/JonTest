@@ -18,8 +18,7 @@ StreamLogger::StreamLogger(
     bool verbose
 )
 :out(out),
-verbose(verbose),
-count()
+verbose(verbose)
 {
 }
 
@@ -55,8 +54,6 @@ void StreamLogger::startCase(
     {
         out << "\t" << suiteName << " - " << caseName << ": start" <<"\n";
     }
-
-    // We will count the case only in endCase()
 }
 
 void StreamLogger::errorCase(
@@ -67,7 +64,7 @@ void StreamLogger::errorCase(
 )
 {
     out << "\t" << suiteName << " - " << caseName << ": " << casePart
-    << " Internal Error: " << message << "\n";
+    << " " <<  message << "\n";
 }
 
 void StreamLogger::failCase(
@@ -103,12 +100,6 @@ void StreamLogger::endCase(
         out << "\t" << suiteName << " - " << caseName << ": done " 
         << (pass ? "passed" : "FAILED") <<"\n";
     }
-
-    ++count.count;
-    if(!pass)
-    {
-        ++count.fails;
-    }
 }
 
 void StreamLogger::endSuite(
@@ -125,14 +116,6 @@ void StreamLogger::endSuite(
 
 void StreamLogger::end()
 {
-
-    out << "Tests Complete:\n" 
-        << "\tRun: " << count.count << "\t Fails: " << count.fails << std::endl;
-}
-
-Count StreamLogger::getCount() const
-{
-    return count;
 }
 
 }

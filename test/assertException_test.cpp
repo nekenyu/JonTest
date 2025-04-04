@@ -2,7 +2,6 @@
 #include "JonTest/Assert.h"
 
 #include <exception>
-#include <iostream>
 #include <string>
 
 class MyTestException
@@ -37,7 +36,7 @@ TEST_SUITE(AssertException)
 
 TEST_CASE(jontest_fail_exception)
 {
-    std::cout << "EXPECT: AssertException - jontest_fail_exception: case UNEXPECTED EXCEPTION: (MyTestException)" << std::endl;
+    // This WILL fail the test to demonstrate feature, and will be monitored externally
     throw MyTestException();
 }
 
@@ -47,10 +46,10 @@ TEST_CASE(expected_assertException)
     assertException(throw MyTestException(), std::exception, "Failed to catch the exception!");
 }
 
-TEST_CASE(wrong_assertException)
+TEST_CASE(jontest_fail_assertExceptionWrong)
 {
     // TestCase::run() will always catch (...), so a wrong exception cannot be an "expectedFailure()"
-    std::cout << "EXPECT: AssertException - wrong_assertException: case Internal Error: UNKNOWN EXCEPTION" << std::endl;
+    // This WILL fail the test to demonstrate feature, and will be monitored externally
     assertException(throw int(5), MyTestException, "Failed to catch the int exception!")
 }
 

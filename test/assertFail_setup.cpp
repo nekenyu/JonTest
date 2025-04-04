@@ -1,15 +1,13 @@
 #include "JonTest/TestSuite.h"
 #include "JonTest/Assert.h"
 
-#include <iostream>
-
 TEST_SUITE(AssertFailSetup)
 
 void setup()
 {
     EXPECTED_FAILURE(assertFail("to be expected"), "expected failure)");
 
-    std::cout << "EXPECT: AssertFailSetup - jontest_fail_assertFailSetup: setup FAILED: jontest_fail_assertFailSetup" << std::endl;
+    // This WILL fail the test to demonstrate feature, and will be monitored externally
     assertFail("jontest_fail_assertFailSetup");
 }
 

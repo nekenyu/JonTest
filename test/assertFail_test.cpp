@@ -1,13 +1,11 @@
 #include "JonTest/TestSuite.h"
 #include "JonTest/Assert.h"
 
-#include <iostream>
-
 TEST_SUITE(AssertFail)
 
 TEST_CASE(jontest_fail_assertFail)
 {
-    std::cout << "EXPECT: AssertFail - jontest_fail_assertFail: case FAILED: jontest_fail_assertFail" << std::endl;
+    // This WILL fail the test to demonstrate feature, and will be monitored externally
     assertFail("jontest_fail_assertFail");
 }
 
