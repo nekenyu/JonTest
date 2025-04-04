@@ -13,7 +13,7 @@ TEST_CASE(jontest_fail_assertFail)
 
 TEST_CASE(expected_assertFail)
 {
-    expectedFailure(assertFail("protected assertFail"), "expected assertFail");
+    EXPECTED_FAILURE(assertFail("protected assertFail"), "expected assertFail");
 }
 
 TEST_SUITE_END();

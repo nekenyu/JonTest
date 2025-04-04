@@ -56,7 +56,7 @@ TEST_CASE(wrong_assertException)
 
 TEST_CASE(did_not_assertException)
 {
-    expectedFailure(assertException(doNothing(), MyTestException, "Failed to throw an exception!"), "No exception thrown, so test failed");    
+    EXPECTED_FAILURE(assertException(doNothing(), MyTestException, "Failed to throw an exception!"), "No exception thrown, so test failed");    
 }
 
 TEST_SUITE_END();

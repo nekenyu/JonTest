@@ -59,18 +59,18 @@ TEST_SUITE(SimpleTest)
     TEST_CASE(b)
     {
         // Demonstrate we can expect a failure of an assert
-        expectedFailure(assertLessEqual(2+1, 0, "less equal w/ 2+1 0"), "Validates expected failure");
-        expectedFailure(assertLessEqual(1+1, 0, "less equal w/ 1+1 0"), "Validates expected failure");
+        EXPECTED_FAILURE(assertLessEqual(2+1, 0, "less equal w/ 2+1 0"), "Validates expected failure");
+        EXPECTED_FAILURE(assertLessEqual(1+1, 0, "less equal w/ 1+1 0"), "Validates expected failure");
 
         // Demonstrate we can expect a failure to throw an expected exception
-        expectedFailure(assertException((void) 2, int, "no exception thrown"), "Validate exception not thrown fails");
+        EXPECTED_FAILURE(assertException((void) 2, int, "no exception thrown"), "Validate exception not thrown fails");
 
         // Demonstrate we can expect a failure of an expected failure
         // Mind blowing, really... But, we have to test it....
-        expectedFailure(expectedFailure(assert(true, "assert true to pass"), "Validate expected failure fails..."), "Validate expected failure");
+        EXPECTED_FAILURE(EXPECTED_FAILURE(assert(true, "assert true to pass"), "Validate expected failure fails..."), "Validate expected failure");
 
         // Demonstrate we can expect a failure of an assert
-        expectedFailure(assert(true, "assert true to pass"), "Validate expected failure fails...");
+        EXPECTED_FAILURE(assert(true, "assert true to pass"), "Validate expected failure fails...");
     }
 
     TEST_CASE(c)

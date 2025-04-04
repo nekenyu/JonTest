@@ -54,9 +54,9 @@ std::ostream& operator <<(std::ostream& out, const InverseWrapper& wrapper)
 #define testLessGreater(lesser, greater) \
 { \
     assertLess(lesser, greater, "pass: lesser < greater"); \
-    expectedFailure(assertLess(greater, lesser, "FAIL: greater < lesser"), "verify FAIL: greater < lesser"); \
+    EXPECTED_FAILURE(assertLess(greater, lesser, "FAIL: greater < lesser"), "verify FAIL: greater < lesser"); \
     assertGreater(greater, lesser, "greater > lesser"); \
-    expectedFailure(assertGreater(lesser, greater, "FAIL: lesser > greater"), "verify FAIL: FAIL: lesser > greater"); \
+    EXPECTED_FAILURE(assertGreater(lesser, greater, "FAIL: lesser > greater"), "verify FAIL: FAIL: lesser > greater"); \
 }
 
 /** Given that lesser < greater, test assertLessEqual() and assertGreaterEqual(), including failures.
@@ -70,9 +70,9 @@ std::ostream& operator <<(std::ostream& out, const InverseWrapper& wrapper)
     assertGreaterEqual(greater, lesser, "lesser >= lesser"); \
     \
     assertLessEqual(lesser, greater, "pass: lesser <= greater"); \
-    expectedFailure(assertLessEqual(greater, lesser, "FAIL: greater <= lesser"), "verify FAIL: greater <= lesser"); \
+    EXPECTED_FAILURE(assertLessEqual(greater, lesser, "FAIL: greater <= lesser"), "verify FAIL: greater <= lesser"); \
     assertGreaterEqual(greater, lesser, "greater >= lesser"); \
-    expectedFailure(assertGreaterEqual(lesser, greater, "FAIL: lesser >= greater"), "verify FAIL: FAIL: lesser >= greater"); \
+    EXPECTED_FAILURE(assertGreaterEqual(lesser, greater, "FAIL: lesser >= greater"), "verify FAIL: FAIL: lesser >= greater"); \
 }
 
 TEST_SUITE(AssertComparison)
@@ -88,7 +88,7 @@ TEST_CASE(assertLessGreater_Object)
 {
     // NOTE: InverseWrapper negates the comparison tests
     testLessGreater(InverseWrapper(1), InverseWrapper(0));
-    expectedFailure(testLessGreater(InverseWrapper(0), InverseWrapper(1)), "verify FAIL: inverse(0) vs. inverse(1)");
+    EXPECTED_FAILURE(testLessGreater(InverseWrapper(0), InverseWrapper(1)), "verify FAIL: inverse(0) vs. inverse(1)");
 }
 
 TEST_CASE(assertLessEqualGreaterEqual_Numeric)
