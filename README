@@ -1,9 +1,2 @@
-GNU Make System for g++ WITHOUT C++20 modules
-- MAKE_LIB=Name  Makes a library with recursive sources -- interface expected in include/
-- MAKE_EXE=Name  Makes an executable with recursive sources
-- MAKE_EXES=1    Makes a C++ for each .cpp in a directory
-- UNSUPPORTED non-g++ compilers
-- UNSUPPORTED non-gnu environments
-
-TODO:
-- n/a
+# JonTest
+Demonstration C++ Unit Test Library
