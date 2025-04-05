@@ -2,7 +2,7 @@
 Demonstration C++ Unit Test Library
 
 See also:
-- [Project Documentation](https://nekenyu.github.io/JonTest/) <!-- Update to the generated documentation site -->
+- [Project Documentation](https://nekenyu.github.io/JonTest/)
 
 > [!NOTE]
 > This page duplicates the doxygen main page.
@@ -45,7 +45,7 @@ This is constrained by the following:
 The TestRunne::get() singleton is used to run tests. Typically, this is from a main() function; however, it could be integrated into a larger testing system.
 
 See also:
-- main.cpp <!-- Update to the generated documentation site -->
+- [main.cpp](https://nekenyu.github.io/JonTest/main_8cpp-example.html)
 
 Testing is organized a tree containing:
 - Test Suites created with TEST_SUITE(suiteName), containing:
@@ -65,7 +65,7 @@ Testing is organized a tree containing:
 # Source Code Examples
 
 See also:
-- assertBool_test.cpp  <!-- Update to the generated documentation site -->
+- [assertBool_test.cpp ](https://nekenyu.github.io/JonTest/assertBool_test_8cpp-example.html)
 
 Primary header files:
 - TestSuite.h  -- Defines TEST_SUITE()s and TEST_CASE()s
@@ -73,7 +73,5 @@ Primary header files:
 - TestRunner.h -- Defines the JonTest::TestRunner to run all the tests
 - Logger.h     -- Defines the JonTest::Logger interface, and the common JonTest::StreamLogger
 
-<!-- Update to the generated documentation site
 See also:
-- <a href="examples.html">Examples</a>
--->
+- [Examples](https://nekenyu.github.io/JonTest/examples.html)
