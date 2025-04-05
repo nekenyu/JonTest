@@ -1,8 +1,6 @@
 #include "JonTest/TestSuite.h"
 #include "JonTest/Assert.h"
 
-#include <iostream>
-
 /** Wrapper which INVERTS less than / greater than comparisons: a < b means Wrapper(a) > Wrapper(b).
  *
  * \note Equality and the equal portion of <= and >= is unaffected. 

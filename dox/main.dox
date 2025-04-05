@@ -47,10 +47,14 @@ Testing is organized a tree containing:
     - Assertions of validatity, such as assert()
 
 Source Code Examples:
+
+\ref assertBool_test.cpp
+\include{lineno} assertBool_test.cpp
+
 \see <a href="examples.html">Examples</a>
 
 
-\section main_license
+\section main_license License
 This project is released under the [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause).
 
 > Copyright (c) 2025, Jonathan Seng

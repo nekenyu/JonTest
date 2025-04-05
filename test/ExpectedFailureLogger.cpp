@@ -2,6 +2,7 @@
 
 #include "JonTest/Count.h"
 
+#include <iostream>
 #include <string>
 
 ExpectedFailureLogger::~ExpectedFailureLogger()

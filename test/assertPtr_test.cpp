@@ -1,8 +1,6 @@
 #include "JonTest/TestSuite.h"
 #include "JonTest/Assert.h"
 
-#include <iostream>
-
 TEST_SUITE(AssertPtr)
 
 TEST_CASE(assertNullPtr_test)
