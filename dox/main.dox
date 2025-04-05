@@ -1,16 +1,26 @@
 /**
 \mainpage JonTest
 
+Demonstration C++ Unit Test Library
+
+\see \ref license
+\see [Github Repository](https://github.com/nekenyu/JonTest/tree/main)
+
+\note This page duplicates the doxygen main page.
+
+
 \section main_intro Introduction
 
-JonTest was a rapid demonstration of certain techniques for the benefit of one person. Given that it functioned, I am presenting it as a modern example of my work -- even if rushed.
+JonTest is a rapid demonstration of certain techniques for the benefit of a particular person. Given that it functioned, it is presented as a modern example of the author's (rushed) work.
 
 \warning This is not intended for production work.
-- Genreal coding standards conventions are violated out of necessity and convenience to the user of this tool
-- Extensive real-world testing has not been performed
+- Genreal coding standards conventions are violated out of necessity 
+  and convenience to the user of this tool. For example:
+  - Macro functions are used to facilitate reporting of filename and line number.
 - The author did not create this to be used and maintained.
   - Better alternatives exist, such as boost test and google test exist.
   - Use them.
+- Extensive real-world testing has not been performed.
 
 This is a unit test tool providing the following:
 - Minimial boilerplate for individual test suites and cases
@@ -22,10 +32,14 @@ This is a unit test tool providing the following:
   - numeric-style comparison: == != < <= > >=
   - specific exception class (including base class) thrown
   - assertions that are known to fail
+- Expected Failures of asserts can be defined:
+  - Failing each contained assert will pass the test.
+  - If all contained asserts pass, the expected failure will then fail the test.
 
 This is constrained by the following:
 - The build system only has GNU Make definitions to build under a GNU environment using g++.
 - The build system is only configured for --std=c++23
+
 
 \section main_overview Overview
 
@@ -46,7 +60,8 @@ Testing is organized a tree containing:
   - (Optional) Test Case `teardown()`, unique for each Test Suite, run before after Test Case in the Test Suite, which may contain:
     - Assertions of validatity, such as assert()
 
-Source Code Examples:
+
+\section main_examples Source Code Examples
 
 \ref assertBool_test.cpp
 \include{lineno} assertBool_test.cpp
@@ -58,25 +73,6 @@ Primary header files:
 - \ref Logger.h     -- Defines the JonTest::Logger interface, and the common JonTest::StreamLogger
 
 \see <a href="examples.html">Examples</a>
-
-
-\section main_license License
-This project is released under the [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause).
-
-> Copyright (c) 2025, Jonathan Seng
-> 
-> All rights reserved.
-> 
-> Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-> 
-> - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-> 
-> - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-> 
-> - Neither the name of Jonathan Seng nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-> 
-> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-> 
 
 
 \section main_install Installation
