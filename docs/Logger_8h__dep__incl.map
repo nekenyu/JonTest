@@ -1,0 +1,21 @@
+<map id="include/JonTest/Logger.h" name="include/JonTest/Logger.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="277,5,455,31"/>
+<area shape="rect" id="Node000002" href="$TestCase_8h.html" title=" " alt="" coords="5,86,199,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="315,37,141,89,140,83,314,32"/>
+<area shape="rect" id="Node000004" href="$TestRunner_8cpp.html" title=" " alt="" coords="255,328,397,353"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="419,34,449,52,472,77,489,111,494,141,489,172,475,208,449,249,415,284,379,311,349,330,346,326,376,307,412,280,445,246,470,205,484,171,488,141,483,113,468,80,445,56,417,39"/>
+<area shape="rect" id="Node000005" href="$TestSuiteTyped_8h.html" title=" " alt="" coords="64,167,247,207"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="332,39,265,81,214,126,174,168,170,165,210,122,262,77,329,35"/>
+<area shape="rect" id="Node000006" href="$TestSuiteInterface_8h.html" title=" " alt="" coords="275,79,457,119"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="369,44,369,79,363,79,363,44"/>
+<area shape="rect" id="Node000008" href="$Logger_8cpp.html" title=" " alt="" coords="535,86,650,111"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="413,33,561,83,559,88,411,38"/>
+<area shape="rect" id="Node000003" href="$TestSuite_8h.html" title=" " alt="" coords="58,255,253,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,123,66,141,54,162,49,184,54,206,66,221,82,234,117,252,115,257,79,238,62,225,49,208,43,184,49,160,62,138,78,119"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="119,122,146,165,141,168,114,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,283,299,325,297,330,194,288"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="158,220,158,254,153,254,153,220"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="308,126,202,169,200,164,306,121"/>
+<area shape="rect" id="Node000007" href="$TestSuiteInterface_8cpp.html" title=" " alt="" coords="271,174,461,199"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="369,133,369,174,363,174,363,133"/>
+</map>

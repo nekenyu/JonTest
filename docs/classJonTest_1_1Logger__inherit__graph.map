@@ -1,0 +1,5 @@
+<map id="JonTest::Logger" name="JonTest::Logger">
+<area shape="rect" id="Node000001" title="Interface for logging events while running tests." alt="" coords="5,5,283,559"/>
+<area shape="rect" id="Node000002" href="$classJonTest_1_1StreamLogger.html" title="Stream&#45;based Logger for events while running tests." alt="" coords="15,607,273,1215"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,572,147,606,141,606,141,572"/>
+</map>

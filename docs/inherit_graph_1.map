@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classJonTest_1_1Logger.html" title="Interface for logging events while running tests." alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000001" href="$classJonTest_1_1StreamLogger.html" title="Stream&#45;based Logger for events while running tests." alt="" coords="173,5,340,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="140,15,173,15,173,21,140,21"/>
+</map>
