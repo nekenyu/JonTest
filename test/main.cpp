@@ -95,8 +95,6 @@ main(
     ExpectedFailureLogger logger(std::cout, verbose);
     const JonTest::Count counts = JonTest::TestRunner::get().run(logger);
     const int fails = counts.fails - logger.getExpectedFailuresFailed();
-    std::cout << "Tests Complete:\n" 
-        << "\tRun: " << counts.count << "\t Fails: " << fails << std::endl;
 
     return fails;
 }

@@ -122,29 +122,37 @@ void ExpectedFailureLogger::endCase(
     }    
 }
 
-void ExpectedFailureLogger::end()
+void ExpectedFailureLogger::end(
+    const JonTest::Count& count
+)
 {
-    out << "Expected Failures: Properly failed " << expectedFails << " of " << expected << ", and removed from failure count and exit code\n";
+    JonTest::Count adjustedCount = count;
+    adjustedCount.fails -= expectedFails;
+    StreamLogger::end(adjustedCount);
 
-    // Skip details when all found and not verbose
-    if((expectedFails == expected) && !verbose)
+    out << "\n"
+        << "Expected Failure Test Cases:\n"
+        << "\tExpected:\t" << expected << " (included in Run)\n"
+        << "\tProper:\t\t" << expectedFails << " (not included in Fails)\n";
+
+    // Display Expected Failures details when not all expected failures failed, or when verbose
+    if((expectedFails != expected) || verbose)
     {
-        return;
-    }
-    
-    out << "Status\t\tTest Suite - Test Case\n";
-    for(const auto& suiteResult : results)
-    {
-        const std::string& suiteName = suiteResult.first;
-        for(const auto& caseResult : suiteResult.second)
+        out << "\n"
+            << "\tStatus\t\tTest Suite - Test Case\n";
+        for(const auto& suiteResult : results)
         {
-            const std::string& caseName = caseResult.first;
-            const bool passedInError = caseResult.second;
-            if(verbose || passedInError)
+            const std::string& suiteName = suiteResult.first;
+            for(const auto& caseResult : suiteResult.second)
             {
-                const std::string result = passedInError ? "ERROR   " : "EXPECTED";
-                out << result << "\t" << suiteName << " - " << caseName << "\n";
+                const std::string& caseName = caseResult.first;
+                const bool passedInError = caseResult.second;
+                if(verbose || passedInError)
+                {
+                    const std::string result = passedInError ? "ERROR   " : "EXPECTED";
+                    out << "\t" << result << "\t" << suiteName << " - " << caseName << "\n";
+                }
             }
-            }
+        }
     }
 }

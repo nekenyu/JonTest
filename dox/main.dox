@@ -51,6 +51,12 @@ Source Code Examples:
 \ref assertBool_test.cpp
 \include{lineno} assertBool_test.cpp
 
+Primary header files:
+- \ref TestSuite.h  -- Defines TEST_SUITE()s and TEST_CASE()s
+- \ref Assert.h     -- Defines assert()ions of many forms
+- \ref TestRunner.h -- Defines the JonTest::TestRunner to run all the tests
+- \ref Logger.h     -- Defines the JonTest::Logger interface, and the common JonTest::StreamLogger
+
 \see <a href="examples.html">Examples</a>
 
 

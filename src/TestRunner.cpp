@@ -34,7 +34,7 @@ Count TestRunner::run(
         counts += nameSuite.second->run(logger);
     }
 
-    logger.end();
+    logger.end(counts);
     return counts;
 }
 

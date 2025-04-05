@@ -62,7 +62,8 @@
  */
 #define TEST_SUITE(testSuiteName) \
 namespace { \
-class testSuiteName : public JonTest::TestSuiteTyped<testSuiteName> \
+class testSuiteName \
+: public JonTest::TestSuiteTyped<testSuiteName> \
 { \
 private: \
     typedef testSuiteName SuiteName; \
@@ -82,7 +83,7 @@ public: \
  * 
  * \param testCaseName Name of Test Suite suitable for a class name.
  * 
- * This creates a function named testCaseName and a help named testCaseName
+ * This creates a function named testCaseName and a helper named testCaseName
  * with "_holder" appended to automatically register the Test Case.
  * 
  * \see TEST_SUITE()

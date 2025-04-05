@@ -1,6 +1,7 @@
 #ifndef TEST_EXPECTED_FAILURE_LOGGER_H
 #define TEST_EXPECTED_FAILURE_LOGGER_H
 
+#include "JonTest/Count.h"
 #include "JonTest/Logger.h"
 
 #include <map>
@@ -116,7 +117,9 @@ public:
         const bool pass
     );
 
-    virtual void end();
+    virtual void end(
+        const JonTest::Count& count
+    );
 };
 
 #endif

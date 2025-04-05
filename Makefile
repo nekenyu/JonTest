@@ -45,9 +45,14 @@ docs:
 cleanest:
 	-rm -rf doc_built
 
+.PHONY: run-examples
+run-examples: all
+	build/examples/SimpleTest.exe
+	build/examples/TestCaseOrder.exe 
+
 .PHONY: run-test
 run-test: all
 	build/test/unit-test.exe
 
 .PHONY: world
-world: all run-test docs
+world: run-test run-examples all docs

@@ -114,8 +114,11 @@ void StreamLogger::endSuite(
     }
 }
 
-void StreamLogger::end()
+void StreamLogger::end(
+    const Count& count
+)
 {
+    out << "Tests Complete:\t\tRun: " << count.count << "\t\tFails: " << count.fails << std::endl;
 }
 
 }

@@ -13,7 +13,7 @@ main(
     char**argv///< array of argc argument char* values to program
 )
 {
-    JonTest::StreamLogger logger(std::cout, false);
+    JonTest::StreamLogger logger(std::cout, true);
     const JonTest::Count counts = JonTest::TestRunner::get().run(logger);
     return counts.fails;
 }

@@ -18,7 +18,7 @@ class TestRunner
 {
 private:
     /// Mapping of test suite name to test suite.
-    std::map<std::string, JonTest::TestSuiteInterface*> suites;
+    std::map<std::string, TestSuiteInterface*> suites;
 
     // Private default constructor for singleton
     TestRunner() = default;

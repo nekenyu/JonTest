@@ -85,7 +85,6 @@ public:
         }
     
         // Note: We use compressed/multiple-statements-per-line for clarity here
-        
         bool setupPassed = false;
         try { suite.setup(); setupPassed = true; }
         catch(TestFailure& failure)       { logger.failCase(suite.getName(), name, "setup", failure); }

@@ -18,6 +18,7 @@ class Logger;
 class TestSuiteInterface
 {
 public:
+    /// Destructor -- does nothing
     virtual ~TestSuiteInterface();
 
     /** The Test Suite runsthis prior to each test case. A default do-nothing implementation is provided.

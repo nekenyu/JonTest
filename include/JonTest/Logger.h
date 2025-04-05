@@ -17,6 +17,7 @@ class TestFailure;
 class Logger
 {
 public:
+    /// Destructor -- does nothing
     virtual ~Logger();
 
     /// Start of all testing
@@ -71,7 +72,9 @@ public:
     ) = 0;
 
     /// End of all testing, suitable to output
-    virtual void end() = 0;
+    virtual void end(
+        const Count& count ///< Count of Test Cases run, and Test Cases failed
+    ) = 0;
 };
 
 /** Stream-based Logger for events while running tests.
@@ -99,6 +102,7 @@ public:
         bool verbose ///< Simple level of verbosity: true for all events, false for critical
     );
 
+    /// Destructor -- does nothing
     virtual ~StreamLogger();
 
     virtual void start();
@@ -145,7 +149,9 @@ public:
         const Count& count
     );
 
-    virtual void end();
+    virtual void end(
+        const Count& count
+    );
 };
 
 }
