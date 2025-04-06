@@ -74,7 +74,7 @@ public:
     run(
         TestSuite& suite, ///< Test Suite this Test Case belongs to
         Logger& logger ///< Receiver of events from the execution of this Test Case
-    )
+    ) const
     {
         logger.startCase(suite.getName(), name);
 

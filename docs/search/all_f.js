@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['what_0',['what',['../classJonTest_1_1TestFailure.html#abad531bcafb45355c3f09d5da9c5ba9e',1,'JonTest::TestFailure']]],
-  ['whatstring_1',['whatString',['../classJonTest_1_1TestFailure.html#a410bbc349256001448c6d2b784685933',1,'JonTest::TestFailure']]]
+  ['verbose_0',['verbose',['../classJonTest_1_1StreamLogger.html#a0ec4454916e154ecc5766f44db5b2feb',1,'JonTest::StreamLogger']]]
 ];

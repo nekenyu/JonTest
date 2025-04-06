@@ -6,6 +6,7 @@
 
 #include <array>
 #include <iostream>
+#include <vector>
 
 namespace
 {
@@ -32,14 +33,23 @@ void doHelp(
         << "Runs the automatically build=defined unit tests.\n"
         << "\tExit code is number of failed tests, or 1 for program error.\n"
         << "\n"
-        << "Arguments:\t\t(alias)\n"
+        << "Usage: " << program << " [<options>] [<test>...]\n"
+        << "\n"
+        << "Options:\t\t(alias)\n"
         << "\t--help\t\t-h\tGets this help information\n"
         << "\t--verbose\t-v\tEnables verbose output\n"
-        << "Note: aliases may NOT be concatenated, such as \"-hv\"\n\n";
+        << "\t--list\t\t-l\tList available Test Suites\n"
+        << "\t--cases\t\t-c\tList available Test Cases\n"
+        << "Note: aliases may NOT be concatenated, such as \"-hv\"\n"
+        << "\n"
+        << "A <test> is one of:\n"
+        << "\t<suite>\t\tname of Test Suite to run\n"
+        << "\t<suite>:<case>\tname of Test Case in Test Suite to run\n"
+        ;
 
     if(!error.empty())
     {
-        std::cout << "Error: " << error;
+        std::cout << "\n Error: " << error;
         if(!errorInfo.empty())
         {
             std::cout << ": " << errorInfo;
@@ -81,6 +91,7 @@ main(
 )
 {
     bool verbose = false;
+    std::vector<std::string> tests;
     {
         const std::string program(argv[0]);
         for(int i = 1; i < argc; ++i)
@@ -88,12 +99,16 @@ main(
             const std::string arg(argv[i]);
             if(contains(std::array{"--verbose", "-v"}, arg)) { verbose = true; }
             else if(contains(std::array{"--help", "-h"}, arg)) { doHelp(program); exit(0); }
-            else { doHelp(program, "Unknown argument", arg.c_str()); exit(1); }
+            else if(contains(std::array{"--list", "-l"}, arg)) { JonTest::TestRunner::get().listTestSuites(std::cout); exit(0); }
+            else if(contains(std::array{"--cases", "-c"}, arg)) { JonTest::TestRunner::get().listTestCases(std::cout); exit(0); }
+            else if(0 == arg.find("-")) { doHelp(program, "Unknown option", arg.c_str()); exit(1); }
+            else if(JonTest::TestRunner::get().isValid(arg)) { tests.push_back(arg); }
+            else { doHelp(program, "Unknown test", arg.c_str()); exit(1); }
         }
     }
 
     ExpectedFailureLogger logger(std::cout, verbose);
-    const JonTest::Count counts = JonTest::TestRunner::get().run(logger);
+    const JonTest::Count counts = JonTest::TestRunner::get().run(logger, tests);
     const int fails = counts.fails - logger.getExpectedFailuresFailed();
 
     return fails;

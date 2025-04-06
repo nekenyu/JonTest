@@ -85,46 +85,54 @@ $(function() {
 <code>#include &quot;<a class="el" href="TestCase_8h_source.html">JonTest/TestCase.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TestRunner_8h_source.html">JonTest/TestRunner.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TestSuiteInterface_8h_source.html">JonTest/TestSuiteInterface.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TestSuiteTyped.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="TestSuiteTyped_8h__incl.png" border="0" usemap="#ainclude_2JonTest_2TestSuiteTyped_8h" alt=""/></div>
 <map name="ainclude_2JonTest_2TestSuiteTyped_8h" id="ainclude_2JonTest_2TestSuiteTyped_8h">
-<area shape="rect" title=" " alt="" coords="287,5,470,45"/>
-<area shape="rect" href="Count_8h.html" title=" " alt="" coords="109,240,232,265"/>
-<area shape="poly" title=" " alt="" coords="287,33,210,40,129,52,61,70,36,82,19,95,9,114,10,134,20,153,37,172,84,206,133,232,130,236,81,210,33,176,16,156,5,135,4,113,15,92,33,77,59,65,128,47,209,35,287,28"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="107,167,234,192"/>
-<area shape="poly" title=" " alt="" coords="354,48,199,161,196,156,351,43"/>
-<area shape="rect" title=" " alt="" coords="472,240,531,265"/>
-<area shape="poly" title=" " alt="" coords="471,34,586,55,634,71,666,91,684,116,691,141,688,167,674,194,647,220,613,237,578,247,545,252,544,247,577,242,612,232,644,215,670,190,683,165,686,142,679,119,662,95,632,76,584,60,470,39"/>
-<area shape="rect" href="TestCase_8h.html" title=" " alt="" coords="307,93,450,119"/>
-<area shape="poly" title=" " alt="" coords="381,46,381,79,376,79,376,46"/>
-<area shape="rect" href="TestRunner_8h.html" title=" " alt="" coords="475,93,629,119"/>
-<area shape="poly" title=" " alt="" coords="421,43,515,85,513,90,419,48"/>
-<area shape="rect" title=" " alt="" coords="609,167,660,192"/>
-<area shape="poly" title=" " alt="" coords="471,35,574,57,616,72,643,92,651,107,653,123,647,154,642,153,647,123,646,108,639,95,614,77,572,62,470,41"/>
-<area shape="rect" href="TestSuiteInterface_8h.html" title=" " alt="" coords="30,93,231,119"/>
-<area shape="poly" title=" " alt="" coords="320,48,181,92,179,87,318,43"/>
-<area shape="poly" title=" " alt="" coords="173,192,173,226,168,226,168,192"/>
-<area shape="rect" title=" " alt="" coords="257,240,343,265"/>
-<area shape="poly" title=" " alt="" coords="193,190,268,231,265,235,190,194"/>
-<area shape="rect" title=" " alt="" coords="9,240,85,265"/>
-<area shape="poly" title=" " alt="" coords="152,194,80,235,77,231,149,190"/>
-<area shape="poly" title=" " alt="" coords="228,189,455,237,459,238,458,243,454,243,227,195"/>
-<area shape="poly" title=" " alt="" coords="346,121,218,165,217,160,344,116"/>
-<area shape="poly" title=" " alt="" coords="410,116,446,136,478,165,494,195,501,226,496,227,489,197,474,168,442,140,407,121"/>
-<area shape="rect" href="TestFailure_8h.html" title=" " alt="" coords="310,167,463,192"/>
-<area shape="poly" title=" " alt="" coords="383,119,386,153,381,153,377,119"/>
-<area shape="poly" title=" " alt="" coords="374,194,326,233,323,229,371,190"/>
-<area shape="poly" title=" " alt="" coords="406,190,472,230,470,235,404,194"/>
-<area shape="rect" title=" " alt="" coords="368,240,443,265"/>
-<area shape="poly" title=" " alt="" coords="392,192,401,226,396,228,387,193"/>
-<area shape="poly" title=" " alt="" coords="475,121,389,139,300,169,243,200,196,234,193,229,240,196,298,164,388,134,474,116"/>
-<area shape="poly" title=" " alt="" coords="550,120,512,228,507,226,545,118"/>
-<area shape="poly" title=" " alt="" coords="567,117,612,155,609,160,564,121"/>
-<area shape="poly" title=" " alt="" coords="140,118,160,153,155,156,135,120"/>
+<area shape="rect" title=" " alt="" coords="406,5,589,45"/>
+<area shape="rect" href="Count_8h.html" title=" " alt="" coords="5,240,128,265"/>
+<area shape="poly" title=" " alt="" coords="406,29,302,32,189,42,136,51,90,62,53,77,29,95,20,110,16,126,20,162,34,198,52,228,48,230,30,200,15,164,10,126,15,108,25,92,50,72,88,57,135,45,188,37,301,27,406,23"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="105,167,231,192"/>
+<area shape="poly" title=" " alt="" coords="433,48,371,69,306,96,247,129,196,161,194,157,244,124,304,91,369,64,431,43"/>
+<area shape="rect" title=" " alt="" coords="417,240,476,265"/>
+<area shape="poly" title=" " alt="" coords="496,46,455,227,450,226,490,45"/>
+<area shape="rect" href="TestCase_8h.html" title=" " alt="" coords="317,93,459,119"/>
+<area shape="poly" title=" " alt="" coords="472,48,417,87,414,83,469,43"/>
+<area shape="rect" href="TestRunner_8h.html" title=" " alt="" coords="535,93,689,119"/>
+<area shape="poly" title=" " alt="" coords="527,43,585,83,582,88,524,48"/>
+<area shape="rect" title=" " alt="" coords="657,167,708,192"/>
+<area shape="poly" title=" " alt="" coords="589,30,621,38,652,50,680,68,704,92,710,107,710,124,700,155,695,154,705,123,705,108,699,95,677,72,650,55,619,43,588,35"/>
+<area shape="rect" title=" " alt="" coords="739,167,802,192"/>
+<area shape="poly" title=" " alt="" coords="590,35,659,55,693,71,724,91,749,120,765,152,760,154,745,123,721,95,691,75,657,60,588,40"/>
+<area shape="rect" href="TestSuiteInterface_8h.html" title=" " alt="" coords="39,93,241,119"/>
+<area shape="poly" title=" " alt="" coords="412,48,206,93,205,88,411,43"/>
+<area shape="rect" title=" " alt="" coords="815,93,900,119"/>
+<area shape="poly" title=" " alt="" coords="584,43,802,90,800,95,583,48"/>
+<area shape="poly" title=" " alt="" coords="153,194,96,234,93,230,150,190"/>
+<area shape="rect" title=" " alt="" coords="169,240,255,265"/>
+<area shape="poly" title=" " alt="" coords="178,191,200,227,195,230,173,194"/>
+<area shape="rect" title=" " alt="" coords="535,240,611,265"/>
+<area shape="poly" title=" " alt="" coords="232,189,522,240,521,245,231,194"/>
+<area shape="poly" title=" " alt="" coords="213,189,405,238,403,243,212,195"/>
+<area shape="poly" title=" " alt="" coords="353,121,217,165,216,160,352,116"/>
+<area shape="poly" title=" " alt="" coords="398,117,424,166,443,225,438,227,419,168,393,120"/>
+<area shape="rect" href="TestFailure_8h.html" title=" " alt="" coords="255,167,409,192"/>
+<area shape="poly" title=" " alt="" coords="381,121,352,157,347,154,377,117"/>
+<area shape="poly" title=" " alt="" coords="314,194,245,235,242,230,311,190"/>
+<area shape="poly" title=" " alt="" coords="352,190,418,230,415,235,349,194"/>
+<area shape="rect" title=" " alt="" coords="295,240,369,265"/>
+<area shape="poly" title=" " alt="" coords="335,192,335,226,329,226,329,192"/>
+<area shape="poly" title=" " alt="" coords="535,117,267,142,149,157,93,169,83,181,76,195,70,227,65,226,71,194,79,178,91,164,148,152,266,137,534,111"/>
+<area shape="poly" title=" " alt="" coords="611,120,583,227,577,226,606,118"/>
+<area shape="poly" title=" " alt="" coords="601,121,518,194,473,233,469,229,514,190,597,117"/>
+<area shape="poly" title=" " alt="" coords="626,117,664,155,660,159,622,121"/>
+<area shape="poly" title=" " alt="" coords="639,116,733,159,731,163,636,121"/>
+<area shape="poly" title=" " alt="" coords="147,118,161,153,156,155,142,120"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

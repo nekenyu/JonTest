@@ -85,6 +85,7 @@ This also adjust the fail count for the tests that <a class="el" href="namespace
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace</span></div>
 <div class="line">{</div>
@@ -101,14 +102,23 @@ This also adjust the fail count for the tests that <a class="el" href="namespace
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;Runs the automatically build=defined unit tests.\n&quot;</span></div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;\tExit code is number of failed tests, or 1 for program error.\n&quot;</span></div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">        &lt;&lt; <span class="stringliteral">&quot;Arguments:\t\t(alias)\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; program &lt;&lt; <span class="stringliteral">&quot; [&lt;options&gt;] [&lt;test&gt;...]\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;Options:\t\t(alias)\n&quot;</span></div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t--help\t\t-h\tGets this help information\n&quot;</span></div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t--verbose\t-v\tEnables verbose output\n&quot;</span></div>
-<div class="line">        &lt;&lt; <span class="stringliteral">&quot;Note: aliases may NOT be concatenated, such as \&quot;-hv\&quot;\n\n&quot;</span>;</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t--list\t\t-l\tList available Test Suites\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t--cases\t\t-c\tList available Test Cases\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;Note: aliases may NOT be concatenated, such as \&quot;-hv\&quot;\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;A &lt;test&gt; is one of:\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t&lt;suite&gt;\t\tname of Test Suite to run\n&quot;</span></div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot;\t&lt;suite&gt;:&lt;case&gt;\tname of Test Case in Test Suite to run\n&quot;</span></div>
+<div class="line">        ;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span>(!error.empty())</div>
 <div class="line">    {</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error: &quot;</span> &lt;&lt; error;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\n Error: &quot;</span> &lt;&lt; error;</div>
 <div class="line">        <span class="keywordflow">if</span>(!errorInfo.empty())</div>
 <div class="line">        {</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; errorInfo;</div>
@@ -143,6 +153,7 @@ This also adjust the fail count for the tests that <a class="el" href="namespace
 <div class="line">)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> verbose = <span class="keyword">false</span>;</div>
+<div class="line">    std::vector&lt;std::string&gt; tests;</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">const</span> std::string program(argv[0]);</div>
 <div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; argc; ++i)</div>
@@ -150,13 +161,17 @@ This also adjust the fail count for the tests that <a class="el" href="namespace
 <div class="line">            <span class="keyword">const</span> std::string arg(argv[i]);</div>
 <div class="line">            <span class="keywordflow">if</span>(contains(std::array{<span class="stringliteral">&quot;--verbose&quot;</span>, <span class="stringliteral">&quot;-v&quot;</span>}, arg)) { verbose = <span class="keyword">true</span>; }</div>
 <div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(contains(std::array{<span class="stringliteral">&quot;--help&quot;</span>, <span class="stringliteral">&quot;-h&quot;</span>}, arg)) { doHelp(program); exit(0); }</div>
-<div class="line">            <span class="keywordflow">else</span> { doHelp(program, <span class="stringliteral">&quot;Unknown argument&quot;</span>, arg.c_str()); exit(1); }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(contains(std::array{<span class="stringliteral">&quot;--list&quot;</span>, <span class="stringliteral">&quot;-l&quot;</span>}, arg)) { <a id="a0" name="a0"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a>().<a id="a1" name="a1"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#a3efaee4eeb6bcf000131490cb7b5af77">listTestSuites</a>(std::cout); exit(0); }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(contains(std::array{<span class="stringliteral">&quot;--cases&quot;</span>, <span class="stringliteral">&quot;-c&quot;</span>}, arg)) { <a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#aabcf45c26b4cd32092db48898db3d1e2">listTestCases</a>(std::cout); exit(0); }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(0 == arg.find(<span class="stringliteral">&quot;-&quot;</span>)) { doHelp(program, <span class="stringliteral">&quot;Unknown option&quot;</span>, arg.c_str()); exit(1); }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a>().isValid(arg)) { tests.push_back(arg); }</div>
+<div class="line">            <span class="keywordflow">else</span> { doHelp(program, <span class="stringliteral">&quot;Unknown test&quot;</span>, arg.c_str()); exit(1); }</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    ExpectedFailureLogger logger(std::cout, verbose);</div>
-<div class="line">    <span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classJonTest_1_1Count.html">JonTest::Count</a> counts = <a id="a1" name="a1"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa9000d23a2c1bca591c648ac6ce42793">run</a>(logger);</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> fails = counts.<a id="a3" name="a3"></a><a class="code hl_variable" href="classJonTest_1_1Count.html#a99ede949ed0ab0b5d1efb92077c730db">fails</a> - logger.getExpectedFailuresFailed();</div>
+<div class="line">    <span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classJonTest_1_1Count.html">JonTest::Count</a> counts = <a class="code hl_function" href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a>().<a id="a4" name="a4"></a><a class="code hl_function" href="classJonTest_1_1TestRunner.html#a37de2bc2b14b18d702520e61fcf29682">run</a>(logger, tests);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> fails = counts.<a id="a5" name="a5"></a><a class="code hl_variable" href="classJonTest_1_1Count.html#a99ede949ed0ab0b5d1efb92077c730db">fails</a> - logger.getExpectedFailuresFailed();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> fails;</div>
 <div class="line">}</div>
@@ -165,8 +180,10 @@ This also adjust the fail count for the tests that <a class="el" href="namespace
 <div class="ttc" id="aTestRunner_8h_html"><div class="ttname"><a href="TestRunner_8h.html">TestRunner.h</a></div></div>
 <div class="ttc" id="aclassJonTest_1_1Count_html"><div class="ttname"><a href="classJonTest_1_1Count.html">JonTest::Count</a></div><div class="ttdoc">Count of tests run, and fails.</div><div class="ttdef"><b>Definition</b> <a href="Count_8h_source.html#l00009">Count.h:10</a></div></div>
 <div class="ttc" id="aclassJonTest_1_1Count_html_a99ede949ed0ab0b5d1efb92077c730db"><div class="ttname"><a href="classJonTest_1_1Count.html#a99ede949ed0ab0b5d1efb92077c730db">JonTest::Count::fails</a></div><div class="ttdeci">int fails</div><div class="ttdoc">Number of tests that have failed.</div><div class="ttdef"><b>Definition</b> <a href="Count_8h_source.html#l00018">Count.h:18</a></div></div>
-<div class="ttc" id="aclassJonTest_1_1TestRunner_html_aa551711f71b304973fea087f13dbd455"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a></div><div class="ttdeci">static TestRunner &amp; get()</div><div class="ttdoc">Get the singleton.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00010">TestRunner.cpp:10</a></div></div>
-<div class="ttc" id="aclassJonTest_1_1TestRunner_html_aa9000d23a2c1bca591c648ac6ce42793"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#aa9000d23a2c1bca591c648ac6ce42793">JonTest::TestRunner::run</a></div><div class="ttdeci">Count run(Logger &amp;logger)</div><div class="ttdoc">Run all tests that have been add()ed.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00025">TestRunner.cpp:25</a></div></div>
+<div class="ttc" id="aclassJonTest_1_1TestRunner_html_a37de2bc2b14b18d702520e61fcf29682"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#a37de2bc2b14b18d702520e61fcf29682">JonTest::TestRunner::run</a></div><div class="ttdeci">Count run(Logger &amp;logger) const</div><div class="ttdoc">Run all tests that have been add()ed.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00142">TestRunner.cpp:142</a></div></div>
+<div class="ttc" id="aclassJonTest_1_1TestRunner_html_a3efaee4eeb6bcf000131490cb7b5af77"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#a3efaee4eeb6bcf000131490cb7b5af77">JonTest::TestRunner::listTestSuites</a></div><div class="ttdeci">void listTestSuites(std::ostream &amp;out) const</div><div class="ttdoc">List available Test Suites to out.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00095">TestRunner.cpp:95</a></div></div>
+<div class="ttc" id="aclassJonTest_1_1TestRunner_html_aa551711f71b304973fea087f13dbd455"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#aa551711f71b304973fea087f13dbd455">JonTest::TestRunner::get</a></div><div class="ttdeci">static TestRunner &amp; get()</div><div class="ttdoc">Get the singleton.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00054">TestRunner.cpp:54</a></div></div>
+<div class="ttc" id="aclassJonTest_1_1TestRunner_html_aabcf45c26b4cd32092db48898db3d1e2"><div class="ttname"><a href="classJonTest_1_1TestRunner.html#aabcf45c26b4cd32092db48898db3d1e2">JonTest::TestRunner::listTestCases</a></div><div class="ttdeci">void listTestCases(std::ostream &amp;out) const</div><div class="ttdoc">List available Test Cases to out.</div><div class="ttdef"><b>Definition</b> <a href="TestRunner_8cpp_source.html#l00114">TestRunner.cpp:114</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

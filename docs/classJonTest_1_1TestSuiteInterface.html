@@ -90,9 +90,9 @@ Inheritance diagram for JonTest::TestSuiteInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classJonTest_1_1TestSuiteInterface__inherit__graph.png" border="0" usemap="#aJonTest_1_1TestSuiteInterface_inherit__map" alt="Inheritance graph"/></div>
 <map name="aJonTest_1_1TestSuiteInterface_inherit__map" id="aJonTest_1_1TestSuiteInterface_inherit__map">
-<area shape="rect" title="Interface for Test Suites." alt="" coords="5,5,219,145"/>
-<area shape="rect" href="classJonTest_1_1TestSuiteTyped.html" title="Holds and runs Test Cases as a single Test Suite." alt="" coords="15,193,209,491"/>
-<area shape="poly" title=" " alt="" coords="115,159,115,193,109,193,109,159"/>
+<area shape="rect" title="Interface for Test Suites." alt="" coords="5,5,231,279"/>
+<area shape="rect" href="classJonTest_1_1TestSuiteTyped.html" title="Holds and runs Test Cases as a single Test Suite." alt="" coords="5,327,231,757"/>
+<area shape="poly" title=" " alt="" coords="121,292,121,326,115,326,115,292"/>
 </map>
 </div>
 <div class="dynheader">
@@ -100,7 +100,7 @@ Collaboration diagram for JonTest::TestSuiteInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classJonTest_1_1TestSuiteInterface__coll__graph.png" border="0" usemap="#aJonTest_1_1TestSuiteInterface_coll__map" alt="Collaboration graph"/></div>
 <map name="aJonTest_1_1TestSuiteInterface_coll__map" id="aJonTest_1_1TestSuiteInterface_coll__map">
-<area shape="rect" title="Interface for Test Suites." alt="" coords="5,5,219,145"/>
+<area shape="rect" title="Interface for Test Suites." alt="" coords="5,5,231,279"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -115,9 +115,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a875bbc6a8b2955b7ff162e06369be763" id="r_a875bbc6a8b2955b7ff162e06369be763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1TestCase.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestSuiteInterface.html#a875bbc6a8b2955b7ff162e06369be763">teardown</a> ()</td></tr>
 <tr class="memdesc:a875bbc6a8b2955b7ff162e06369be763"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Test Suite runs this after to each test case.  <br /></td></tr>
 <tr class="separator:a875bbc6a8b2955b7ff162e06369be763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08524f3fbe524ef521a44ca7e566ef5" id="r_ab08524f3fbe524ef521a44ca7e566ef5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1TestCase.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestSuiteInterface.html#ab08524f3fbe524ef521a44ca7e566ef5">isValid</a> (<a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;<a class="el" href="classJonTest_1_1TestCase.html">caseName</a>) <a class="el" href="classJonTest_1_1TestCase.html">const</a> =0</td></tr>
+<tr class="memdesc:ab08524f3fbe524ef521a44ca7e566ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if caseName can be run in this Test Suite,.  <br /></td></tr>
+<tr class="separator:ab08524f3fbe524ef521a44ca7e566ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f304b846a38c157365d0d208728e93" id="r_a87f304b846a38c157365d0d208728e93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1TestCase.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestSuiteInterface.html#a87f304b846a38c157365d0d208728e93">listTestCases</a> (std::ostream &amp;out) <a class="el" href="classJonTest_1_1TestCase.html">const</a> =0</td></tr>
+<tr class="memdesc:a87f304b846a38c157365d0d208728e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">List available Test Cases to out.  <br /></td></tr>
+<tr class="separator:a87f304b846a38c157365d0d208728e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2946a1a6113e5b2357dbc98ea1b51c9" id="r_ac2946a1a6113e5b2357dbc98ea1b51c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1Count.html">Count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestSuiteInterface.html#ac2946a1a6113e5b2357dbc98ea1b51c9">run</a> (<a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">logger</a>)=0</td></tr>
 <tr class="memdesc:ac2946a1a6113e5b2357dbc98ea1b51c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs all Test Cases in this Test Suite.  <br /></td></tr>
 <tr class="separator:ac2946a1a6113e5b2357dbc98ea1b51c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ce2483ab525ae910aafdec15b4c2dd" id="r_ad7ce2483ab525ae910aafdec15b4c2dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1Count.html">Count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestSuiteInterface.html#ad7ce2483ab525ae910aafdec15b4c2dd">run</a> (<a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">logger</a>, <a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;<a class="el" href="classJonTest_1_1TestCase.html">testCase</a>)=0</td></tr>
+<tr class="memdesc:ad7ce2483ab525ae910aafdec15b4c2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the given testCase in this Test Suite.  <br /></td></tr>
+<tr class="separator:ad7ce2483ab525ae910aafdec15b4c2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for Test Suites. </p>
@@ -156,8 +165,70 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab08524f3fbe524ef521a44ca7e566ef5" name="ab08524f3fbe524ef521a44ca7e566ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab08524f3fbe524ef521a44ca7e566ef5">&#9670;&#160;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1TestCase.html">bool</a> JonTest::TestSuiteInterface::isValid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>caseName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if caseName can be run in this Test Suite,. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if caseName can be run, otherwise false </dd></dl>
+
+<p>Implemented in <a class="el" href="classJonTest_1_1TestSuiteTyped.html#aa1e96b98dd8c0c140819077c8d18de51">JonTest::TestSuiteTyped&lt; TestSuiteDerived &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a87f304b846a38c157365d0d208728e93" name="a87f304b846a38c157365d0d208728e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f304b846a38c157365d0d208728e93">&#9670;&#160;</a></span>listTestCases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1TestCase.html">int</a> JonTest::TestSuiteInterface::listTestCases </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List available Test Cases to out. </p>
+<p>&lt; </p><dl class="section return"><dt>Returns</dt><dd>the number of test cases </dd></dl>
+
+<p>Implemented in <a class="el" href="classJonTest_1_1TestSuiteTyped.html#a95c56b74358da8cd24e98dae2798feb0">JonTest::TestSuiteTyped&lt; TestSuiteDerived &gt;</a>.</p>
+
+</div>
+</div>
 <a id="ac2946a1a6113e5b2357dbc98ea1b51c9" name="ac2946a1a6113e5b2357dbc98ea1b51c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2946a1a6113e5b2357dbc98ea1b51c9">&#9670;&#160;</a></span>run()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2946a1a6113e5b2357dbc98ea1b51c9">&#9670;&#160;</a></span>run() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,6 +261,55 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="classJonTest_1_1TestSuiteTyped.html#a9f166052a30982de79b2a725855bac93">JonTest::TestSuiteTyped&lt; TestSuiteDerived &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ad7ce2483ab525ae910aafdec15b4c2dd" name="ad7ce2483ab525ae910aafdec15b4c2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ce2483ab525ae910aafdec15b4c2dd">&#9670;&#160;</a></span>run() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">virtual</a> <a class="el" href="classJonTest_1_1Count.html">Count</a> JonTest::TestSuiteInterface::run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>testCase</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs the given testCase in this Test Suite. </p>
+<dl class="section note"><dt>Note</dt><dd>If testCase is not valid, it will result in an error, and the returned count of running 1 test, and failing 1 test. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classJonTest_1_1Count.html" title="Count of tests run, and fails.">Count</a> of tests run and tests failed in this Test Suite. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>to log events of running the test suite and cases  </td></tr>
+    <tr><td class="paramname">testCase</td><td>to run </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classJonTest_1_1TestSuiteTyped.html#abf54dd89d13985d72028def1fcf0153c">JonTest::TestSuiteTyped&lt; TestSuiteDerived &gt;</a>.</p>
 
 </div>
 </div>

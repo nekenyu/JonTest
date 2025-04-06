@@ -7,8 +7,10 @@
 #include "JonTest/TestRunner.h"
 #include "JonTest/TestSuiteInterface.h"
 
+#include <algorithm>
 #include <map>
 #include <string>
+#include <vector>
 
 namespace JonTest
 {
@@ -34,7 +36,7 @@ public:
 
 private:
     /// Name of this Test Suite
-    const std::string name;
+    const std::string suiteName;
 
     /// Map of Test Case name to TestCase<TestSuite> cases
     std::map<std::string, TestCase<TestSuite>> cases;
@@ -45,11 +47,11 @@ protected:
      * Restricted to derived classes.
      */
     TestSuiteTyped(
-        const char * const name ///< Name of this test suite
+        const char * const suiteName ///< Name of this test suite
     )
-    : name(name)
+    : suiteName(suiteName)
     {
-        TestRunner::get().add(name, this);
+        TestRunner::get().add(suiteName, this);
     }
 
     virtual ~TestSuiteTyped() { }
@@ -59,7 +61,15 @@ public:
     */
     const std::string& ///< \returns the name of this Test Suite.
     getName() const {
-        return name;
+        return suiteName;
+    }
+
+    virtual bool /// \returns true if caseName can be run, otherwise false
+    isValid(
+        const std::string& caseName
+    ) const
+    {
+        return cases.end() != cases.find(caseName);
     }
 
     /** Add TestCaseMethod by name to this Test Suite.
@@ -73,6 +83,28 @@ public:
         cases[testCaseName] = TestCase<TestSuite>(testCaseName, testCaseMethod);
     }
 
+    /** List available Test Cases to out.
+     */
+    virtual int ///< \returns the number of test cases
+    listTestCases(
+        std::ostream& out
+    ) const
+    {
+        std::vector<std::string> names;
+        for(const auto& testCase : cases)
+        {
+            names.push_back(testCase.first);
+        }
+        std::sort(names.begin(), names.end());
+    
+        for(const auto& name : names)
+        {
+            out << "\t" << suiteName << ":" << name << "\n";
+        }
+    
+        return cases.size();
+    }
+
     /** Run all Test Cases in the Test Suite giving events to logger.
      */
     virtual Count ///< \returns Count of tests run and failed in this Test Suite.
@@ -80,7 +112,7 @@ public:
         Logger& logger ///< The logger for events issued while running this test
     )
     {
-        logger.startSuite(name);
+        logger.startSuite(suiteName);
 
         Count count;
         for(auto& nameCase : cases)
@@ -93,9 +125,41 @@ public:
             }
         }
     
-        logger.endSuite(name, count);
+        logger.endSuite(suiteName, count);
         return count;
     }
+
+    /** Runs the given testCase in this Test Suite.
+     * 
+     * \note If testCase is not valid, it will result in an error, and the
+     * returned count of running 1 test, and failing 1 test.
+     */
+    virtual Count /// \returns the Count of tests run and tests failed in this Test Suite.
+    run(
+        Logger& logger, ///< to log events of running the test suite and cases
+        const std::string& testCase ///< to run
+    )
+    {
+        // Skip reporting the suite on individual tests
+        Count count;
+        ++count.count;
+
+        const auto nameCase = cases.find(testCase);
+        if(cases.end() == nameCase)
+        {
+            ++count.fails;
+            return count;
+        }
+
+        const bool passed = nameCase->second.run(static_cast<TestSuite&>(*this), logger);
+        if(! passed)
+        {
+            ++count.fails;
+        }
+
+        return count;
+    }
+
 };
 
 }

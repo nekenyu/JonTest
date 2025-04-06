@@ -75,6 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -93,18 +94,36 @@ Collaboration diagram for JonTest::TestRunner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classJonTest_1_1TestRunner__coll__graph.png" border="0" usemap="#aJonTest_1_1TestRunner_coll__map" alt="Collaboration graph"/></div>
 <map name="aJonTest_1_1TestRunner_coll__map" id="aJonTest_1_1TestRunner_coll__map">
-<area shape="rect" title="Singleton that collects all TEST_SUITE()s, to run on demand." alt="" coords="5,5,247,204"/>
+<area shape="rect" title="Singleton that collects all TEST_SUITE()s, to run on demand." alt="" coords="5,5,247,357"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a23bafefa020c38dcb3b51f9ac4af4d83" id="r_a23bafefa020c38dcb3b51f9ac4af4d83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">typedef</a> std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a23bafefa020c38dcb3b51f9ac4af4d83">TestNames</a></td></tr>
+<tr class="memdesc:a23bafefa020c38dcb3b51f9ac4af4d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Test Names as: "&lt;suite&gt;" or "&lt;suite&gt;:&lt;case&gt;".  <br /></td></tr>
+<tr class="separator:a23bafefa020c38dcb3b51f9ac4af4d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a741375cd18efd86500372d6252c54d31" id="r_a741375cd18efd86500372d6252c54d31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a741375cd18efd86500372d6252c54d31">add</a> (<a class="el" href="classJonTest_1_1TestCase.html">const</a> <a class="el" href="classJonTest_1_1TestCase.html">char</a> *<a class="el" href="classJonTest_1_1TestCase.html">const</a> name, <a class="el" href="classJonTest_1_1TestSuiteInterface.html">TestSuiteInterface</a> *<a class="el" href="classJonTest_1_1TestCase.html">const</a> <a class="el" href="classJonTest_1_1TestCase.html">suite</a>)</td></tr>
 <tr class="memdesc:a741375cd18efd86500372d6252c54d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the suite by name.  <br /></td></tr>
 <tr class="separator:a741375cd18efd86500372d6252c54d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9000d23a2c1bca591c648ac6ce42793" id="r_aa9000d23a2c1bca591c648ac6ce42793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1Count.html">Count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#aa9000d23a2c1bca591c648ac6ce42793">run</a> (<a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">logger</a>)</td></tr>
-<tr class="memdesc:aa9000d23a2c1bca591c648ac6ce42793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all tests that have been <a class="el" href="classJonTest_1_1TestRunner.html#a741375cd18efd86500372d6252c54d31" title="Add the suite by name.">add()</a>ed.  <br /></td></tr>
-<tr class="separator:aa9000d23a2c1bca591c648ac6ce42793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200fbb802b783b162c395377f865c3d3" id="r_a200fbb802b783b162c395377f865c3d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a200fbb802b783b162c395377f865c3d3">isValid</a> (<a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;<a class="el" href="classJonTest_1_1TestCase.html">test</a>) <a class="el" href="classJonTest_1_1TestCase.html">const</a></td></tr>
+<tr class="memdesc:a200fbb802b783b162c395377f865c3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if test can be run as one of: a valid Test Suite, or Test Suite:Test Case.  <br /></td></tr>
+<tr class="separator:a200fbb802b783b162c395377f865c3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efaee4eeb6bcf000131490cb7b5af77" id="r_a3efaee4eeb6bcf000131490cb7b5af77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a3efaee4eeb6bcf000131490cb7b5af77">listTestSuites</a> (std::ostream &amp;out) <a class="el" href="classJonTest_1_1TestCase.html">const</a></td></tr>
+<tr class="memdesc:a3efaee4eeb6bcf000131490cb7b5af77"><td class="mdescLeft">&#160;</td><td class="mdescRight">List available Test Suites to out.  <br /></td></tr>
+<tr class="separator:a3efaee4eeb6bcf000131490cb7b5af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcf45c26b4cd32092db48898db3d1e2" id="r_aabcf45c26b4cd32092db48898db3d1e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1TestCase.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#aabcf45c26b4cd32092db48898db3d1e2">listTestCases</a> (std::ostream &amp;out) <a class="el" href="classJonTest_1_1TestCase.html">const</a></td></tr>
+<tr class="memdesc:aabcf45c26b4cd32092db48898db3d1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">List available Test Cases to out.  <br /></td></tr>
+<tr class="separator:aabcf45c26b4cd32092db48898db3d1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37de2bc2b14b18d702520e61fcf29682" id="r_a37de2bc2b14b18d702520e61fcf29682"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1Count.html">Count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a37de2bc2b14b18d702520e61fcf29682">run</a> (<a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">logger</a>) <a class="el" href="classJonTest_1_1TestCase.html">const</a></td></tr>
+<tr class="memdesc:a37de2bc2b14b18d702520e61fcf29682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all tests that have been <a class="el" href="classJonTest_1_1TestRunner.html#a741375cd18efd86500372d6252c54d31" title="Add the suite by name.">add()</a>ed.  <br /></td></tr>
+<tr class="separator:a37de2bc2b14b18d702520e61fcf29682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a044ddb0d7fc91b03c5e01393fa2fee89" id="r_a044ddb0d7fc91b03c5e01393fa2fee89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJonTest_1_1Count.html">Count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJonTest_1_1TestRunner.html#a044ddb0d7fc91b03c5e01393fa2fee89">run</a> (<a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">logger</a>, <a class="el" href="classJonTest_1_1TestCase.html">const</a> <a class="el" href="classJonTest_1_1TestRunner.html#a23bafefa020c38dcb3b51f9ac4af4d83">TestNames</a> &amp;<a class="el" href="classJonTest_1_1TestCase.html">tests</a>) <a class="el" href="classJonTest_1_1TestCase.html">const</a></td></tr>
+<tr class="memdesc:a044ddb0d7fc91b03c5e01393fa2fee89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the specified tests.  <br /></td></tr>
+<tr class="separator:a044ddb0d7fc91b03c5e01393fa2fee89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -126,8 +145,27 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton that collects all <a class="el" href="TestSuite_8h.html#af6a1ea0863d57433a2a86dae9a189002" title="Defines a Test Suite named testSuiteName.">TEST_SUITE()</a>s, to run on demand. </p>
 
-<p class="definition">Definition at line <a class="el" href="TestRunner_8h_source.html#l00017">17</a> of file <a class="el" href="TestRunner_8h_source.html">TestRunner.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="TestRunner_8h_source.html#l00019">19</a> of file <a class="el" href="TestRunner_8h_source.html">TestRunner.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a23bafefa020c38dcb3b51f9ac4af4d83" name="a23bafefa020c38dcb3b51f9ac4af4d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23bafefa020c38dcb3b51f9ac4af4d83">&#9670;&#160;</a></span>TestNames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">typedef</a> std::vector&lt;std::string&gt; <a class="el" href="classJonTest_1_1TestRunner.html#a23bafefa020c38dcb3b51f9ac4af4d83">JonTest::TestRunner::TestNames</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of Test Names as: "&lt;suite&gt;" or "&lt;suite&gt;:&lt;case&gt;". </p>
+
+<p class="definition">Definition at line <a class="el" href="TestRunner_8h_source.html#l00030">30</a> of file <a class="el" href="TestRunner_8h_source.html">TestRunner.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adfbd4082b93d731069a10f2f91bf6e17" name="adfbd4082b93d731069a10f2f91bf6e17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfbd4082b93d731069a10f2f91bf6e17">&#9670;&#160;</a></span>TestRunner()</h2>
 
@@ -189,7 +227,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00016">16</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00060">60</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,15 +256,86 @@ Private Attributes</h2></td></tr>
 
 <p>Get the singleton. </p>
 <dl class="section return"><dt>Returns</dt><dd>the singleton. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="SimpleTest_8cpp-example.html#a2">SimpleTest.cpp</a>, <a class="el" href="TestCaseOrder_8cpp-example.html#a2">TestCaseOrder.cpp</a>, and <a class="el" href="main_8cpp-example.html#a1">main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="SimpleTest_8cpp-example.html#a2">SimpleTest.cpp</a>, <a class="el" href="TestCaseOrder_8cpp-example.html#a2">TestCaseOrder.cpp</a>, and <a class="el" href="main_8cpp-example.html#a0">main.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00010">10</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00054">54</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa9000d23a2c1bca591c648ac6ce42793" name="aa9000d23a2c1bca591c648ac6ce42793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9000d23a2c1bca591c648ac6ce42793">&#9670;&#160;</a></span>run()</h2>
+<a id="a200fbb802b783b162c395377f865c3d3" name="a200fbb802b783b162c395377f865c3d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200fbb802b783b162c395377f865c3d3">&#9670;&#160;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">bool</a> JonTest::TestRunner::isValid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1TestCase.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>test</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine if test can be run as one of: a valid Test Suite, or Test Suite:Test Case. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if test can be run, otherwise false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00069">69</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aabcf45c26b4cd32092db48898db3d1e2" name="aabcf45c26b4cd32092db48898db3d1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabcf45c26b4cd32092db48898db3d1e2">&#9670;&#160;</a></span>listTestCases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">void</a> JonTest::TestRunner::listTestCases </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List available Test Cases to out. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="main_8cpp-example.html#a2">main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00114">114</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3efaee4eeb6bcf000131490cb7b5af77" name="a3efaee4eeb6bcf000131490cb7b5af77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efaee4eeb6bcf000131490cb7b5af77">&#9670;&#160;</a></span>listTestSuites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1TestCase.html">void</a> JonTest::TestRunner::listTestSuites </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List available Test Suites to out. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="main_8cpp-example.html#a1">main.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00095">95</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a37de2bc2b14b18d702520e61fcf29682" name="a37de2bc2b14b18d702520e61fcf29682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37de2bc2b14b18d702520e61fcf29682">&#9670;&#160;</a></span>run() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,23 +345,66 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;&#160;</td>
           <td class="paramname"><em>logger</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Run all tests that have been <a class="el" href="classJonTest_1_1TestRunner.html#a741375cd18efd86500372d6252c54d31" title="Add the suite by name.">add()</a>ed. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classJonTest_1_1Count.html" title="Count of tests run, and fails.">Count</a> of tests run and tests failed fails. </dd></dl>
+<p>&lt; </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classJonTest_1_1Count.html" title="Count of tests run, and fails.">Count</a> of tests run and tests failed fails. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logger</td><td>To report status to </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="SimpleTest_8cpp-example.html#a3">SimpleTest.cpp</a>, <a class="el" href="TestCaseOrder_8cpp-example.html#a3">TestCaseOrder.cpp</a>, and <a class="el" href="main_8cpp-example.html#a2">main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="SimpleTest_8cpp-example.html#a3">SimpleTest.cpp</a>, <a class="el" href="TestCaseOrder_8cpp-example.html#a3">TestCaseOrder.cpp</a>, and <a class="el" href="main_8cpp-example.html#a4">main.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00025">25</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00142">142</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a044ddb0d7fc91b03c5e01393fa2fee89" name="a044ddb0d7fc91b03c5e01393fa2fee89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044ddb0d7fc91b03c5e01393fa2fee89">&#9670;&#160;</a></span>run() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJonTest_1_1Count.html">Count</a> JonTest::TestRunner::run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1Logger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classJonTest_1_1TestCase.html">const</a> <a class="el" href="classJonTest_1_1TestRunner.html#a23bafefa020c38dcb3b51f9ac4af4d83">TestNames</a> &amp;&#160;</td>
+          <td class="paramname"><em>tests</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the specified tests. </p>
+<p>Any element of tests that fails isValid(test) will be reported as an error and test failure.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classJonTest_1_1Count.html" title="Count of tests run, and fails.">Count</a> of tests run and tests failed fails. &lt; </dd>
+<dd>
+<a class="el" href="classJonTest_1_1Count.html" title="Count of tests run, and fails.">Count</a> of tests run and tests failed fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>To report status to  </td></tr>
+    <tr><td class="paramname">tests</td><td>To run </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TestRunner_8cpp_source.html#l00158">158</a> of file <a class="el" href="TestRunner_8cpp_source.html">TestRunner.cpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +431,7 @@ Private Attributes</h2></td></tr>
 
 <p>Mapping of test suite name to test suite. </p>
 
-<p class="definition">Definition at line <a class="el" href="TestRunner_8h_source.html#l00021">21</a> of file <a class="el" href="TestRunner_8h_source.html">TestRunner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestRunner_8h_source.html#l00023">23</a> of file <a class="el" href="TestRunner_8h_source.html">TestRunner.h</a>.</p>
 
 </div>
 </div>

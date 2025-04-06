@@ -1,23 +1,13 @@
 var searchData=
 [
-  ['teardown_0',['teardown',['../classJonTest_1_1TestSuiteInterface.html#a875bbc6a8b2955b7ff162e06369be763',1,'JonTest::TestSuiteInterface']]],
-  ['test_5fcase_1',['TEST_CASE',['../TestSuite_8h.html#a8e8b20de9893cabef04484d1ff86ee3b',1,'TestSuite.h']]],
-  ['test_5fsuite_2',['TEST_SUITE',['../TestSuite_8h.html#af6a1ea0863d57433a2a86dae9a189002',1,'TestSuite.h']]],
-  ['test_5fsuite_5fend_3',['TEST_SUITE_END',['../TestSuite_8h.html#a603cb7f45efd81606e51686da9aeebd9',1,'TestSuite.h']]],
-  ['testcase_4',['testcase',['../classJonTest_1_1TestCase.html#a77854028562421fa0852f2ad37820362',1,'JonTest::TestCase::TestCase()=default'],['../classJonTest_1_1TestCase.html#a6e628fb8675fd090a84ef08a47c20632',1,'JonTest::TestCase::TestCase(const char *const testCaseName, TestCaseMethod const testCaseMethod)'],['../classJonTest_1_1TestCase.html#a0259d6274cc5a7cfec67f263b3a20e52',1,'JonTest::TestCase::TestCase(const TestCase &amp;right)=default'],['../classJonTest_1_1TestCase.html',1,'JonTest::TestCase&lt; TestSuiteDerived &gt;']]],
-  ['testcase_2eh_5',['TestCase.h',['../TestCase_8h.html',1,'']]],
-  ['testcasemethod_6',['testcasemethod',['../classJonTest_1_1TestSuiteTyped.html#a16ea4552be8ff0e9f8221f8ac7f88367',1,'JonTest::TestSuiteTyped::TestCaseMethod'],['../classJonTest_1_1TestCase.html#a894be261d7ab14d45156b8734e634bbe',1,'JonTest::TestCase::TestCaseMethod'],['../classJonTest_1_1TestCase.html#a3c8c1e0e54b83e8292d132cc5d9e46bb',1,'JonTest::TestCase::testCaseMethod']]],
-  ['testfailure_7',['testfailure',['../classJonTest_1_1TestFailure.html',1,'JonTest::TestFailure'],['../classJonTest_1_1TestFailure.html#acf2901cfa1ed01626352dec3b3c2df5b',1,'JonTest::TestFailure::TestFailure(const char *const file, const int line, const std::string &amp;message, const std::string &amp;firstExpression, const Type1 &amp;firstValue, const std::string &amp;secondExpression, const Type2 &amp;secondValue, const std::string &amp;operatorString)'],['../classJonTest_1_1TestFailure.html#add5c2dd85620e29fdf26615d60a3789f',1,'JonTest::TestFailure::TestFailure(const char *const file, const int line, const std::string &amp;message)']]],
-  ['testfailure_2ecpp_8',['TestFailure.cpp',['../TestFailure_8cpp.html',1,'']]],
-  ['testfailure_2eh_9',['TestFailure.h',['../TestFailure_8h.html',1,'']]],
-  ['testrunner_10',['testrunner',['../classJonTest_1_1TestRunner.html#adfbd4082b93d731069a10f2f91bf6e17',1,'JonTest::TestRunner::TestRunner()'],['../classJonTest_1_1TestRunner.html',1,'JonTest::TestRunner']]],
-  ['testrunner_2ecpp_11',['TestRunner.cpp',['../TestRunner_8cpp.html',1,'']]],
-  ['testrunner_2eh_12',['TestRunner.h',['../TestRunner_8h.html',1,'']]],
-  ['testsuite_13',['testsuite',['../classJonTest_1_1TestCase.html#a96e718bff8936f49256cf9fd95664e8e',1,'JonTest::TestCase::TestSuite'],['../classJonTest_1_1TestSuiteTyped.html#a73c098fbf359cad9e860a8cfebe2e9a7',1,'JonTest::TestSuiteTyped::TestSuite']]],
-  ['testsuite_2eh_14',['TestSuite.h',['../TestSuite_8h.html',1,'']]],
-  ['testsuiteinterface_15',['TestSuiteInterface',['../classJonTest_1_1TestSuiteInterface.html',1,'JonTest']]],
-  ['testsuiteinterface_2ecpp_16',['TestSuiteInterface.cpp',['../TestSuiteInterface_8cpp.html',1,'']]],
-  ['testsuiteinterface_2eh_17',['TestSuiteInterface.h',['../TestSuiteInterface_8h.html',1,'']]],
-  ['testsuitetyped_18',['testsuitetyped',['../classJonTest_1_1TestSuiteTyped.html',1,'JonTest::TestSuiteTyped&lt; TestSuiteDerived &gt;'],['../classJonTest_1_1TestSuiteTyped.html#af04d9c584ccac1acfef80d0b3e416d62',1,'JonTest::TestSuiteTyped::TestSuiteTyped()']]],
-  ['testsuitetyped_2eh_19',['TestSuiteTyped.h',['../TestSuiteTyped_8h.html',1,'']]]
+  ['secondexpression_0',['secondExpression',['../classJonTest_1_1TestFailure.html#ae6463b1d78c8691e5d8521382dc82ded',1,'JonTest::TestFailure']]],
+  ['secondvalue_1',['secondValue',['../classJonTest_1_1TestFailure.html#ac79928e88728dafba444e6700cf4cf94',1,'JonTest::TestFailure']]],
+  ['setup_2',['setup',['../classJonTest_1_1TestSuiteInterface.html#a093b0acd7f1fb08184c5a6073ea33dab',1,'JonTest::TestSuiteInterface']]],
+  ['source_20code_20examples_3',['Source Code Examples',['../index.html#main_examples',1,'']]],
+  ['start_4',['start',['../classJonTest_1_1Logger.html#a6c137e1592ea90628dc5ebc000d42aba',1,'JonTest::Logger::start()'],['../classJonTest_1_1StreamLogger.html#a1fbaedefd9526a57faec4756831d3b90',1,'JonTest::StreamLogger::start()']]],
+  ['startcase_5',['startcase',['../classJonTest_1_1Logger.html#a5e5f4b4c8ed68244212596580bf2608d',1,'JonTest::Logger::startCase()'],['../classJonTest_1_1StreamLogger.html#a2441a42ec37d2b72bc9e316fdfce8a59',1,'JonTest::StreamLogger::startCase()']]],
+  ['startsuite_6',['startsuite',['../classJonTest_1_1Logger.html#a8f7ccbc5f5df1436cb24e1dfd46b35a9',1,'JonTest::Logger::startSuite()'],['../classJonTest_1_1StreamLogger.html#a32b0253121f3e76c5dc5b79211455241',1,'JonTest::StreamLogger::startSuite()']]],
+  ['streamlogger_7',['streamlogger',['../classJonTest_1_1StreamLogger.html',1,'JonTest::StreamLogger'],['../classJonTest_1_1StreamLogger.html#ac679073670d7709e73613b42edccb5b2',1,'JonTest::StreamLogger::StreamLogger()']]],
+  ['suitename_8',['suiteName',['../classJonTest_1_1TestSuiteTyped.html#adc1a483e69410c99bd0c13e40aebb3ef',1,'JonTest::TestSuiteTyped']]],
+  ['suites_9',['suites',['../classJonTest_1_1TestRunner.html#ac000e34c4bece7b4a2603236c4b78577',1,'JonTest::TestRunner']]]
 ];

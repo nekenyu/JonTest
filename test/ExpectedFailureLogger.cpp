@@ -150,7 +150,7 @@ void ExpectedFailureLogger::end(
                 if(verbose || passedInError)
                 {
                     const std::string result = passedInError ? "ERROR   " : "EXPECTED";
-                    out << "\t" << result << "\t" << suiteName << " - " << caseName << "\n";
+                    out << "\t" << result << "\t" << suiteName << ":" << caseName << "\n";
                 }
             }
         }

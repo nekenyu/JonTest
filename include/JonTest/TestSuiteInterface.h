@@ -29,12 +29,36 @@ public:
      */
     virtual void teardown();
 
-    /** Runs all Test Cases in this Test Suite.
-     * 
-     * \returns the Count of tests run and tests failed in this Test Suite.
+    /** Determine if caseName can be run in this Test Suite,
      */
-    virtual Count run(
+    virtual bool /// \returns true if caseName can be run, otherwise false
+    isValid(
+        const std::string& caseName
+    ) const = 0;
+
+    /** List available Test Cases to out.
+     */
+    virtual int ///< \returns the number of test cases
+    listTestCases(
+        std::ostream& out
+    ) const = 0;
+
+    /** Runs all Test Cases in this Test Suite.
+     */
+    virtual Count /// \returns the Count of tests run and tests failed in this Test Suite.
+    run(
         Logger& logger ///< to log events of running the test suite and cases
+    ) = 0;
+
+    /** Runs the given testCase in this Test Suite.
+     * 
+     * \note If testCase is not valid, it will result in an error, and the
+     * returned count of running 1 test, and failing 1 test.
+     */
+    virtual Count /// \returns the Count of tests run and tests failed in this Test Suite.
+    run(
+        Logger& logger, ///< to log events of running the test suite and cases
+        const std::string& testCase ///< to run
     ) = 0;
 };
 
