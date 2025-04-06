@@ -55,15 +55,8 @@ TARGETS=${LIBRARY}
 
 # Make the library
 
-# .PRECIOUS prevents the intermediate $(OBJECTS) from being deleted
-.PRECIOUS: $(OBJECTS)
-# These rules override the POSIX behavior to support parallel build by updating all outdated members last
-(%) : % ;
-%.a : ; $(AR) $(ARFLAGS) $@ $?
-
-# TODO: Would be nice if it wouldn't update members from NON-updated objects
-$(LIBRARY): $(LIBRARY)($(OBJECTS))
-	$(AR) $(ARFLAGS) $@ $?
+$(LIBRARY): $(OBJECTS)
+	$(AR) $(ARFLAGS) $@ $^
 	ranlib $@
 
 endif
